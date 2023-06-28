@@ -7,6 +7,7 @@ use App\Entity\Location;
 use App\Entity\Memory;
 use App\Entity\Model;
 use App\Entity\Network;
+use App\Entity\RAM;
 use App\Entity\Status;
 use App\Entity\Telephone;
 use App\Entity\User;
@@ -250,7 +251,7 @@ class AppFixtures extends Fixture
         }
         $rams = [];
         foreach (self::RAM as $keys => $value) {
-            $ram = new NETWORK();
+            $ram = new RAM();
             $ram->setName($value['name']);
             $ram->setPrice($value['price']);
             $manager->persist($ram);

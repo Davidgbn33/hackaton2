@@ -28,7 +28,7 @@ class Model
     private Collection $telephone;
 
     #[ORM\ManyToOne(inversedBy: 'models')]
-    private ?brand $brand = null;
+    private ?Brand $brand = null;
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;

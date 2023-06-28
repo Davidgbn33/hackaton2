@@ -1,0 +1,22 @@
+{{ form_start(form) }}
+<div class="test2">
+{{ form_row(form.model) }}
+    <div>
+    </div>
+</div>
+{{ form_row(form.memory) }}
+{{ form_row(form.network) }}
+{{ form_row(form.status) }}
+
+    {{ form_label(form) }}
+    {{ form_widget(form) }}
+
+
+
+
+
+
+
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
