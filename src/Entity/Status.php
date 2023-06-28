@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\NetworkRepository;
+use App\Repository\StatusRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: NetworkRepository::class)]
-class Network
+#[ORM\Entity(repositoryClass: StatusRepository::class)]
+#[ORM\Table(name: '`condition`')]
+class Status
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,7 +22,7 @@ class Network
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $price = null;
 
-    #[ORM\OneToMany(mappedBy: 'network', targetEntity: telephone::class)]
+    #[ORM\OneToMany(mappedBy: 'status', targetEntity: telephone::class)]
     private Collection $telephone;
 
     public function __construct()
@@ -70,7 +71,7 @@ class Network
     {
         if (!$this->telephone->contains($telephone)) {
             $this->telephone->add($telephone);
-            $telephone->setNetwork($this);
+            $telephone->setStatus($this);
         }
 
         return $this;
@@ -80,8 +81,8 @@ class Network
     {
         if ($this->telephone->removeElement($telephone)) {
             // set the owning side to null (unless already changed)
-            if ($telephone->getNetwork() === $this) {
-                $telephone->setNetwork(null);
+            if ($telephone->getStatus() === $this) {
+                $telephone->setStatus(null);
             }
         }
 

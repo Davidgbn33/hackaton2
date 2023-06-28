@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RAMRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RAMRepository::class)]
@@ -18,6 +20,14 @@ class RAM
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $price = null;
+
+    #[ORM\OneToMany(mappedBy: 'RAM', targetEntity: telephone::class)]
+    private Collection $telephone;
+
+    public function __construct()
+    {
+        $this->telephone = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -44,6 +54,36 @@ class RAM
     public function setPrice(?string $price): static
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, telephone>
+     */
+    public function getTelephone(): Collection
+    {
+        return $this->telephone;
+    }
+
+    public function addTelephone(telephone $telephone): static
+    {
+        if (!$this->telephone->contains($telephone)) {
+            $this->telephone->add($telephone);
+            $telephone->setRAM($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTelephone(telephone $telephone): static
+    {
+        if ($this->telephone->removeElement($telephone)) {
+            // set the owning side to null (unless already changed)
+            if ($telephone->getRAM() === $this) {
+                $telephone->setRAM(null);
+            }
+        }
 
         return $this;
     }
