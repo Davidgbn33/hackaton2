@@ -22,12 +22,18 @@ class AppFixtures extends Fixture
     }
 
     public const BRAND = [
-        'LG',
-        'Samsung',
-        'Apple',
-        'Huawei',
-        'Xiaomi',
-        'Sony',
+        1 => ['name'=>'LG',
+            'image'=>'' ],
+        2 => ['name'=>'Samsung',
+            'image'=>'' ],
+        3 => ['name'=>'Apple',
+            'image'=>'' ],
+        4 => ['name'=>'Huawei',
+            'image'=>'' ],
+        5 => ['name'=>'Xiaomi',
+            'image'=>'' ],
+        6 => ['name'=>'Sony',
+            'image'=>'' ],
     ];
 
     public const CONDITION = [
@@ -149,6 +155,7 @@ class AppFixtures extends Fixture
         foreach (self::BRAND as $value) {
             $brand = new BRAND();
             $brand->setName($value);
+            $brand->setImage($value);
             $manager->persist($brand);
 
             $brands[] = $brand;

@@ -20,13 +20,17 @@ class Brand
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'brand', targetEntity: telephone::class)]
-    private Collection $telephone;
+    #[ORM\OneToMany(mappedBy: 'brand', targetEntity: Model::class)]
+    private Collection $models;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
 
     public function __construct()
     {
-        $this->telephone = new ArrayCollection();
+        $this->models = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -46,32 +50,45 @@ class Brand
     }
 
     /**
-     * @return Collection<int, telephone>
+     * @return Collection<int, Model>
      */
-    public function getTelephone(): Collection
+    public function getModels(): Collection
     {
-        return $this->telephone;
+        return $this->models;
     }
 
-    public function addTelephone(telephone $telephone): static
+    public function addModel(Model $model): static
     {
-        if (!$this->telephone->contains($telephone)) {
-            $this->telephone->add($telephone);
-            $telephone->setBrand($this);
+        if (!$this->models->contains($model)) {
+            $this->models->add($model);
+            $model->setBrand($this);
         }
 
         return $this;
     }
 
-    public function removeTelephone(telephone $telephone): static
+    public function removeModel(Model $model): static
     {
-        if ($this->telephone->removeElement($telephone)) {
+        if ($this->models->removeElement($model)) {
             // set the owning side to null (unless already changed)
-            if ($telephone->getBrand() === $this) {
-                $telephone->setBrand(null);
+            if ($model->getBrand() === $this) {
+                $model->setBrand(null);
             }
         }
 
         return $this;
     }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
 }

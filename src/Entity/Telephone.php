@@ -19,14 +19,11 @@ class Telephone
     #[ORM\Column]
     private ?bool $cable_charger = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $estimatedPrice = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $estimatedPrice = null;
 
     #[ORM\ManyToOne(inversedBy: 'telephone')]
     private ?User $user = null;
-
-    #[ORM\ManyToOne(inversedBy: 'telephone')]
-    private ?Brand $brand = null;
 
     #[ORM\ManyToOne(inversedBy: 'telephone')]
     private ?Model $model = null;
@@ -80,18 +77,6 @@ class Telephone
     public function setUser(?User $user): static
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    public function getBrand(): ?Brand
-    {
-        return $this->brand;
-    }
-
-    public function setBrand(?Brand $brand): static
-    {
-        $this->brand = $brand;
 
         return $this;
     }

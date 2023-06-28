@@ -21,11 +21,17 @@ class Model
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $price = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $price = null;
 
     #[ORM\OneToMany(mappedBy: 'model', targetEntity: telephone::class)]
     private Collection $telephone;
+
+    #[ORM\ManyToOne(inversedBy: 'models')]
+    private ?brand $brand = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
 
     public function __construct()
     {
@@ -87,6 +93,30 @@ class Model
                 $telephone->setModel(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getBrand(): ?brand
+    {
+        return $this->brand;
+    }
+
+    public function setBrand(?brand $brand): static
+    {
+        $this->brand = $brand;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }

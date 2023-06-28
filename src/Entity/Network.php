@@ -20,8 +20,8 @@ class Network
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $price = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $price = null;
 
     #[ORM\OneToMany(mappedBy: 'network', targetEntity: telephone::class)]
     private Collection $telephone;
