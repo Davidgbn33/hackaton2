@@ -2,16 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\Model;
+use App\Repository\ModelRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TelephoneController extends AbstractController
 {
-    #[Route('/iphone', name: 'app_telephone')]
+    #[Route('/iphone', name: 'app_iphone')]
     public function iphone(): Response
     {
-        return $this->render('telephoneChoice/Iphone.html.twig', [
+        return $this->render('brand/index.html.twig', [
         ]);
     }
 
