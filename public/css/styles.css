@@ -5,14 +5,16 @@
 @import "modules/footer.css";
 @import "modules/navbar.css";
 
+@import "modules/brandPage.css";
+
+
 *{
     box-sizing: border-box;
 }
 
-body {;
+
+body {
+    background-color: var(--e-color-background);
     margin: 0;
     padding: 0;
-}
-.test {
-    background-color: blue
 }
