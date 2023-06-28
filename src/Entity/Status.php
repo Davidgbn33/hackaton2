@@ -25,7 +25,7 @@ class Status
     #[ORM\Column(nullable: true)]
     private ?int $price = null;
 
-    #[ORM\OneToMany(mappedBy: 'status', targetEntity: telephone::class)]
+    #[ORM\OneToMany(mappedBy: 'status', targetEntity: Telephone::class)]
     private Collection $telephone;
 
     public function __construct()
