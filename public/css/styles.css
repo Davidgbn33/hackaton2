@@ -4,6 +4,7 @@
 @import "modules/card.css";
 @import "modules/footer.css";
 @import "modules/navbar.css";
+@import "modules/brandPage.css";
 
 *{
     box-sizing: border-box;
