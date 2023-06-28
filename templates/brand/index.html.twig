@@ -4,10 +4,12 @@
 
 {% block body %}
     <div class="e-titleBrand">
-<h1>Sélectionner la marque du téléphone</h1>
+<h1 style="color:rgb(97,189,255); opacity: 100%; font-family: 'Anton', sans-serif; font-size:xxx-large">Sélectionner la marque du téléphone</h1>
     </div>
+    <img class="e-color" src="{{ asset('/images/color-logo.png') }}" style="rotate: 70deg;">
 
-    <section class="e-brandBoxPage">
+    <section class="e-brandBoxPage"style="background: rgb(97,189,255);
+background: linear-gradient(0deg, rgba(97,189,255,0.6881346288515406) 8%, rgba(255,255,255,1) 48%);">
         <div class="e-oneBrand">
             <img class="e-logoBrand" src="{{ asset('/images/huawei.jpg') }}">
         </div>
@@ -16,16 +18,16 @@
 
         </div>
         <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/sony.jpg') }}">
+            <img class="e-logoBrand" src="{{ asset('/images/sony-logo.png') }}">
         </div>
         <div class="e-oneBrand">
             <img class="e-logoBrand" src="{{ asset('/images/xiaomi.jpg') }}">
         </div>
         <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/apple.png') }}">
+            <img class="e-logoBrand" src="{{ asset('/images/samsung.jpg') }}">
         </div>
         <div class="e-oneBrand">
             <img class="e-logoBrand" src="{{ asset('/images/lg.png') }}">
         </div>
     </section>
-{% endblock %}
+        {% endblock %}

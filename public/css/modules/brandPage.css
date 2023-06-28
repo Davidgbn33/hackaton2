@@ -1,18 +1,48 @@
+.e-titleBrand{
+    text-align: center;
+    margin-top:5%;
+    margin-left:5%;
+    width:90vw;
+    height:5vw;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border-radius:8px;
+}
 .e-brandBoxPage{
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
     justify-content:space-around;
+    width:80vw;
+    border-radius:8px;
+    box-shadow: gray 2px 2px 2px 2px;
+    margin-left:10%;
+    margin-top:5%;
+    z-index:9;
 }
-.e-titleBrand{
-    background-color: #61BDFF;
-    opacity: 11%;
-}
+
 .e-oneBrand{
     border-radius:8px;
-    box-shadow: gray 2px 2px;
+    box-shadow: gray 2px 2px 2px 2px;
+    width: 20%;
+    height:25%;
+    margin:5% 5%;
+    display:flex;
+    justify-content: center;
+    transition: transform .2s;
+    background-color:white;
+}
+.e-oneBrand:hover{
+    transform: scale(1.2);
 }
 .e-logoBrand{
-    width : 20vw;
-    height: 30vh;
+    width : 15vw;
+    height: 24vh;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+.e-color {
+    position: absolute;
+    z-index: 1;
 }
