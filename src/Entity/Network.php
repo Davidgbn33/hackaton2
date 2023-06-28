@@ -23,7 +23,7 @@ class Network
     #[ORM\Column(nullable: true)]
     private ?int $price = null;
 
-    #[ORM\OneToMany(mappedBy: 'network', targetEntity: telephone::class)]
+    #[ORM\OneToMany(mappedBy: 'network', targetEntity: Telephone::class)]
     private Collection $telephone;
 
     public function __construct()
