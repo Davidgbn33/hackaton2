@@ -20,7 +20,12 @@ class TelephoneType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('cable_charger', BooleanFilterType::class)
+            ->add('cable_charger', BooleanFilterType::class, [
+                'label' => 'Cable chargeur',
+                'label_attr' => [
+                    'class' => 'my-custom-checkbox-label1',
+                ],
+            ])
 
 
             ->add('model',EntityType::class,[
@@ -29,6 +34,9 @@ class TelephoneType extends AbstractType
                 'multiple' => false,
                 'expanded' => true,
                 'by_reference' => false,
+                'label_attr' => [
+                    'class' => 'my-custom-checkbox-label',
+                ],
             ])
 
             ->add('RAM', EntityType::class, [
@@ -37,6 +45,10 @@ class TelephoneType extends AbstractType
                 'multiple' => false,
                 'expanded' => true,
                 'by_reference' => false,
+                'label_attr' => [
+                    'class' => 'my-custom-checkbox-label',
+                ],
+
             ])
             ->add('memory', EntityType::class, [
                 'class' => Memory::class,
@@ -44,6 +56,10 @@ class TelephoneType extends AbstractType
                 'multiple' => false,
                 'expanded' => true,
                 'by_reference' => false,
+                'label_attr' => [
+                    'class' => 'my-custom-checkbox-label',
+                ],
+
             ])
             ->add('network', EntityType::class, [
                 'class' => Network::class,
@@ -51,6 +67,10 @@ class TelephoneType extends AbstractType
                 'multiple' => false,
                 'expanded' => true,
                 'by_reference' => false,
+                'label_attr' => [
+                    'class' => 'my-custom-checkbox-label',
+                ],
+
             ])
             ->add('status', EntityType::class, [
                 'class' => Status::class,
@@ -58,6 +78,10 @@ class TelephoneType extends AbstractType
                 'multiple' => false,
                 'expanded' => true,
                 'by_reference' => false,
+                'label_attr' => [
+                    'class' => 'my-custom-checkbox-label',
+                ],
+
             ])
         ;
     }

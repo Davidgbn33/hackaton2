@@ -23,15 +23,16 @@
     background: #002743;
     width: 200px;
     height: 64px;
-    margin: 0 30px;
+    padding: 0;
 }
 .form-check-input[type="radio"]{
     border-radius: 5px;
+    margin: 0;
 }
-.form-check{
+/*.form-check{
     display: flex;
     flex-direction: column;
-}
+}*/
 #telephone_model,
 #telephone_RAM,
 #telephone_memory,
@@ -51,9 +52,49 @@
     text-align: center;
 }
 
-.form-check-label{
+/*.form-check-label{
      position: relative;
     color: white;
     top: -42px;
     right: -25px;
+}*/
+.my-custom-checkbox-label {
+    /* Styles personnalisés */
+    color: white;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -48px;
+
+}
+.form-check .form-check-input{
+    float: none;
+}
+.form-check-input:checked{
+    background: yellow;
+}
+.col-form-label{
+    color: black !important;
+    top: -4px !important;
+}
+.my-custom-checkbox-label1{
+    display: flex;
+    position: relative;
+    color: white;
+    top: -42px;
+    left: 83px;
+}
+.my-custom-checkbox-label2{
+    color: black;
+}
+.e-img{
+    width: 50%;
+}
+.e-form{
+    width: 80%;
+}
+.e-width{
+    width: 30%;
+    position:sticky;
 }
