@@ -16,31 +16,90 @@
     justify-content:space-around;
     width:80vw;
     border-radius:8px;
-    box-shadow: gray 2px 2px 2px 2px;
     margin-left:10%;
     margin-top:5%;
-    z-index:9;
 }
 
-.e-oneBrand{
-    border-radius:8px;
+.e-oneBrandAp{
+    border-radius: 50%;
     box-shadow: gray 2px 2px 2px 2px;
     width: 20%;
-    height:25%;
+    height:15vw;
     margin:5% 5%;
     display:flex;
     justify-content: center;
+    align-items: center;
     transition: transform .2s;
-    background-color:white;
+    background-color:#E53750;
 }
-.e-oneBrand:hover{
+.e-oneBrandSs{
+    border-radius: 50%;
+    box-shadow: gray 2px 2px 2px 2px;
+    width: 20%;
+    height:15vw;
+    margin:5% 5%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s;
+    background-color:#FFB84D;
+}
+.e-oneBrandSn{
+    border-radius: 50%;
+    box-shadow: gray 2px 2px 2px 2px;
+    width: 20%;
+    height:15vw;
+    margin:5% 5%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s;
+    background-color:#FFB84D;
+}
+.e-oneBrandHw{
+    border-radius: 50%;
+    box-shadow: gray 2px 2px 2px 2px;
+    width: 20%;
+    height:15vw;
+    margin:5% 5%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s;
+    background-color:#00ACB0;
+}
+.e-oneBrandLg{
+    border-radius: 50%;
+    box-shadow: gray 2px 2px 2px 2px;
+    width: 20%;
+    height:15vw;
+    margin:5% 5%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s;
+    background-color:#00ACB0;
+}
+.e-oneBrandXm{
+    border-radius: 50%;
+    box-shadow: gray 2px 2px 2px 2px;
+    width: 20%;
+    height:15vw;
+    margin:5% 5%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s;
+    background-color:#2A3A74;
+}
+
+
+.e-oneBrandXm:hover, .e-oneBrandAp:hover, .e-oneBrandSn:hover, .e-oneBrandSs:hover, .e-oneBrandHw:hover, .e-oneBrandLg:hover{
     transform: scale(1.2);
 }
 .e-logoBrand{
-    width : 15vw;
-    height: 24vh;
-    margin-top:5%;
-    margin-bottom:5%;
+    width : 12vw;
+    height: 20vh;
 }
 .e-color {
     position: absolute;
