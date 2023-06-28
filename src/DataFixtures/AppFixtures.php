@@ -6,7 +6,9 @@ use App\Entity\Brand;
 use App\Entity\Location;
 use App\Entity\Memory;
 use App\Entity\Model;
+use App\Entity\Network;
 use App\Entity\Status;
+use App\Entity\Telephone;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -22,21 +24,21 @@ class AppFixtures extends Fixture
     }
 
     public const BRAND = [
-        1 => ['name'=>'LG',
-            'image'=>'' ],
-        2 => ['name'=>'Samsung',
-            'image'=>'' ],
-        3 => ['name'=>'Apple',
-            'image'=>'' ],
-        4 => ['name'=>'Huawei',
-            'image'=>'' ],
-        5 => ['name'=>'Xiaomi',
-            'image'=>'' ],
-        6 => ['name'=>'Sony',
-            'image'=>'' ],
+        1 => ['name' => 'LG',
+            'image' => ''],
+        2 => ['name' => 'Samsung',
+            'image' => ''],
+        3 => ['name' => 'Apple',
+            'image' => ''],
+        4 => ['name' => 'Huawei',
+            'image' => ''],
+        5 => ['name' => 'Xiaomi',
+            'image' => ''],
+        6 => ['name' => 'Sony',
+            'image' => ''],
     ];
 
-    public const CONDITION = [
+    public const STATUS = [
         1 => [
             'name' => 'HS',
             'price' => 100
@@ -97,29 +99,53 @@ class AppFixtures extends Fixture
 
     public const MODEL = [
         1 => ['name' => 'Iphone 11',
-            'price' => 100],
+            'price' => 100,
+            'image' => '',
+            'brand' => '3'],
         2 => ['name' => 'Iphone 8',
-            'price' => 50],
+            'price' => 50,
+            'image' => '',
+            'brand' => '3'],
         3 => ['name' => 'samsumg s10',
-            'price' => 50],
+            'price' => 50,
+            'image' => '',
+            'brand' => '2'],
         4 => ['name' => 'samsumg s20',
-            'price' => 60],
+            'price' => 60,
+            'image' => '',
+            'brand' => '2'],
         5 => ['name' => 'LG G8X',
-            'price' => 50],
+            'price' => 50,
+            'image' => '',
+            'brand' => '1'],
         6 => ['name' => 'LG G8S',
-            'price' => 60],
+            'price' => 60,
+            'image' => '',
+            'brand' => '1'],
         7 => ['name' => 'XIAOMI MI 10',
-            'price' => 50],
+            'price' => 50,
+            'image' => '',
+            'brand' => '5'],
         8 => ['name' => 'XIAOMI 11T 5G',
-            'price' => 60],
+            'price' => 60,
+            'image' => '',
+            'brand' => '5'],
         9 => ['name' => 'Huawei P10',
-            'price' => 30],
+            'price' => 30,
+            'image' => '',
+            'brand' => '4'],
         10 => ['name' => 'Huawei P30',
-            'price' => 60],
+            'price' => 60,
+            'image' => '',
+            'brand' => '4'],
         11 => ['name' => 'Sony Xperia 1',
-            'price' => 30],
+            'price' => 30,
+            'image' => '',
+            'brand' => '6'],
         12 => ['name' => 'Sony Xperia 5',
-            'price' => 60],
+            'price' => 60,
+            'image' => '',
+            'brand' => '6'],
     ];
     public const NETWORK = [
         1 => ['name' => '2G',
@@ -138,36 +164,52 @@ class AppFixtures extends Fixture
             'password' => '123456',
             'firstName' => 'John',
             'lastName' => 'Doe',
-            'isVerified' => true],
+            'isVerified' => true,
+            'location' => 'Paris',
+        ],
+
         2 => [
             'email' => 'admin@me.fr',
             'roles' => ['ROLE_ADMIN'],
             'password' => '123456',
             'firstName' => 'paul',
             'lastName' => 'Doe',
-            'isVerified' => true],
+            'isVerified' => true,
+            'location' => 'Paris',
+        ],
     ];
+  /*  public const TELEPHONE = [
+        1=>['user'=> '1',
+        'model'=> '1',
+        'memory'=> '1',
+        'ram'=> '1',
+        'network'=> '1',
+        'status'=> '1',
+        'cableCharger'=> true,
+        'estimatedPrice'=> '100',
+    ]];*/
 
     public function load(ObjectManager $manager): void
     {
 
         $brands = [];
-        foreach (self::BRAND as $value) {
+        foreach (self::BRAND as $keys => $value) {
             $brand = new BRAND();
-            $brand->setName($value);
-            $brand->setImage($value);
+            $brand->setName($value['name']);
+            $brand->setImage($value['image']);
             $manager->persist($brand);
 
             $brands[] = $brand;
         }
 
-        $conditions = [];
-        foreach (self::CONDITION as $value) {
-            $condition = new STATUS();
-            $condition->setName($value);
-            $manager->persist($condition);
+        $status = [];
+        foreach (self::STATUS as $keys => $value) {
+            $status = new STATUS();
+            $status->setName($value['name']);
+            $status->setPrice($value['price']);
+            $manager->persist($status);
 
-            $conditions[] = $condition;
+            $conditions[] = $status;
         }
         $locations = [];
         foreach (self::LOCATION as $value) {
@@ -178,23 +220,74 @@ class AppFixtures extends Fixture
             $locations[] = $location;
         }
         $memories = [];
-        foreach (self::MEMORY as $value) {
+        foreach (self::MEMORY as $keys => $value) {
             $memory = new MEMORY();
-            $memory->setName($value);
-            $memory->setPrice($value);
+            $memory->setName($value['name']);
+            $memory->setPrice($value['price']);
             $manager->persist($memory);
 
             $memories[] = $memory;
         }
         $models = [];
-        foreach (self::MODEL as $value) {
+        foreach (self::MODEL as $keys =>$value) {
             $model = new MODEL();
-            $model->setName($value);
-            $model->setPrice($value);
+            $model->setName($value['name']);
+            $model->setPrice($value['price']);
+            $model->setImage($value['image']);
+            $model->setBrand($brand);
             $manager->persist($model);
 
             $models[] = $model;
         }
+        $networks = [];
+        foreach (self::NETWORK as $keys => $value) {
+            $network = new NETWORK();
+            $network->setName($value['name']);
+            $network->setPrice($value['price']);
+            $manager->persist($network);
+
+            $memories[] = $network;
+        }
+        $rams = [];
+        foreach (self::RAM as $keys => $value) {
+            $ram = new NETWORK();
+            $ram->setName($value['name']);
+            $ram->setPrice($value['price']);
+            $manager->persist($ram);
+
+            $rams[] = $ram;
+        }
+
+        $users = [];
+        foreach (self::USER as $keys =>$value) {
+            $user = new User();
+            $user->setEmail($value['email']);
+            $user->setRoles($value['roles']);
+            $user->setPassword($this->hasher->hashPassword($user, '123456'));
+            $user->setFirstName($value['firstName']);
+            $user->setLastName($value['lastName']);
+            $user->setIsVerified($value['isVerified']);
+            $user->setLocation($location);
+            $manager->persist($user);
+
+            $users[] = $user;
+        }
+   /*     $telephones = [];
+        foreach (self::TELEPHONE as $keys =>$value) {
+            $telephone = new TELEPHONE();
+            $telephone->setModel($model['model']);
+            $telephone->setMemory($memory['memory']);
+            $telephone->setNetwork($network['network']);
+            $telephone->setRam($ram['ram']);
+            $telephone->setStatus($status['status']);
+            $telephone->setUser($user['user']);
+            $telephone->setCableCharger($value['cableCharger']);
+            $telephone->setEstimatedPrice($value['estimatedPrice']);
+            $manager->persist($telephone);
+
+            $telephones[] = $telephone;
+        }*/
+
         $manager->flush();
     }
 }
