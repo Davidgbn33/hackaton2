@@ -19,8 +19,8 @@ class Telephone
     #[ORM\Column]
     private ?bool $cable_charger = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $estimatedPrice = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $estimatedPrice = null;
 
     #[ORM\ManyToOne(inversedBy: 'telephone')]
     private ?User $user = null;

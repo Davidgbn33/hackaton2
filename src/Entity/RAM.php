@@ -20,8 +20,8 @@ class RAM
     #[ORM\Column(length: 255)]
     private ?string $Name = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $price = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $price = null;
 
     #[ORM\OneToMany(mappedBy: 'RAM', targetEntity: telephone::class)]
     private Collection $telephone;
