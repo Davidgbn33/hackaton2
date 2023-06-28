@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Récapitulatif{% endblock %}
+
+{% block body %}
+<img src="" alt="">
+<div class="">
+    <h1>Récapitulatif de votre ajout</h1>
+    <p>{{ telephone.modelId }}</p>
+    <p>Mémoire : {{ telephone.memoryId }}</p>
+    <p>RAM : {{ telephone.ramId }}</p>
+    <p>Etat : {{ telephone.statusId }}</p>
+    <p>Prix de vente conseillé : {{ telephone.estimatedPrice }}</p>
+
+
+    <button type="button" class="btn btn-outline-dark"><a href="{{ app_telephone }}">Retour</a></button>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+</div>
+{% endblock %}

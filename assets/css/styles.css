@@ -1,0 +1,16 @@
+@import "modules/variables.css";
+@import "modules/button.css";
+@import "modules/form.css";
+@import "modules/card.css";
+@import "modules/footer.css";
+@import "modules/navbar.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--e-color-background);
+    margin: 0;
+    padding: 0;
+}
