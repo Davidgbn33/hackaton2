@@ -22,6 +22,7 @@ class TelephoneController extends AbstractController
             'telephones' => $telephoneRepository->findAll(),
         ]);
     }
+
     #[Route('/iphone', name: 'iphone', methods: ['GET'])]
     public function iphone(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
@@ -33,6 +34,7 @@ class TelephoneController extends AbstractController
             'telephones' => $telephones,
         ]);
     }
+
     #[Route('/lg', name: 'lg', methods: ['GET'])]
     public function lg(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
@@ -44,6 +46,7 @@ class TelephoneController extends AbstractController
             'telephones' => $telephones,
         ]);
     }
+
     #[Route('/sony', name: 'sony', methods: ['GET'])]
     public function sony(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
@@ -55,6 +58,7 @@ class TelephoneController extends AbstractController
             'telephones' => $telephones,
         ]);
     }
+
     #[Route('/samsung', name: 'samsung', methods: ['GET'])]
     public function samsung(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
@@ -66,6 +70,7 @@ class TelephoneController extends AbstractController
             'telephones' => $telephones,
         ]);
     }
+
     #[Route('/xiaomi', name: 'xiaomi', methods: ['GET'])]
     public function xiaomi(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
@@ -77,6 +82,7 @@ class TelephoneController extends AbstractController
             'telephones' => $telephones,
         ]);
     }
+
     #[Route('/huawei', name: 'huawei', methods: ['GET'])]
     public function huawei(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
@@ -88,8 +94,9 @@ class TelephoneController extends AbstractController
             'telephones' => $telephones,
         ]);
     }
+
     #[Route('/huawei/new', name: 'huawei_new', methods: ['GET', 'POST'])]
-    public function huaweiNew(Request $request, TelephoneRepository $telephoneRepository,ModelRepository $modelRepository, BrandRepository $brandRepository): Response
+    public function huaweiNew(Request $request, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'Huawei']);
 
@@ -115,8 +122,9 @@ class TelephoneController extends AbstractController
             'form' => $form,
         ]);
     }
+
     #[Route('/iphone/new', name: 'iphone_new', methods: ['GET', 'POST'])]
-    public function iphoneNew(Request $request, TelephoneRepository $telephoneRepository,ModelRepository $modelRepository, BrandRepository $brandRepository): Response
+    public function iphoneNew(Request $request, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'Apple']);
 
@@ -142,8 +150,9 @@ class TelephoneController extends AbstractController
             'form' => $form,
         ]);
     }
+
     #[Route('/lg/new', name: 'lg_new', methods: ['GET', 'POST'])]
-    public function lgNew(Request $request, TelephoneRepository $telephoneRepository,ModelRepository $modelRepository, BrandRepository $brandRepository): Response
+    public function lgNew(Request $request, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'LG']);
 
@@ -169,8 +178,9 @@ class TelephoneController extends AbstractController
             'form' => $form,
         ]);
     }
+
     #[Route('/sony/new', name: 'sony_new', methods: ['GET', 'POST'])]
-    public function sonyNew(Request $request, TelephoneRepository $telephoneRepository,ModelRepository $modelRepository, BrandRepository $brandRepository): Response
+    public function sonyNew(Request $request, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'Sony']);
 
@@ -195,8 +205,9 @@ class TelephoneController extends AbstractController
             'form' => $form,
         ]);
     }
+
     #[Route('/samsung/new', name: 'samsung_new', methods: ['GET', 'POST'])]
-    public function samsungNew(Request $request, TelephoneRepository $telephoneRepository,ModelRepository $modelRepository, BrandRepository $brandRepository): Response
+    public function samsungNew(Request $request, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'Samsung']);
 
@@ -222,8 +233,9 @@ class TelephoneController extends AbstractController
             'form' => $form,
         ]);
     }
+
     #[Route('/xiaomi/new', name: 'xiaomi_new', methods: ['GET', 'POST'])]
-    public function xiaomiNew(Request $request, TelephoneRepository $telephoneRepository,ModelRepository $modelRepository, BrandRepository $brandRepository): Response
+    public function xiaomiNew(Request $request, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'Xiaomi']);
 
@@ -289,9 +301,11 @@ class TelephoneController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_telephone_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Telephone $telephone, TelephoneRepository $telephoneRepository): Response
+    public function edit(Request $request, Telephone $telephone, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
-        $form = $this->createForm(TelephoneType::class, $telephone);
+
+        $form = $this->createForm(TelephoneType::class, $telephone, [
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -305,6 +319,4 @@ class TelephoneController extends AbstractController
             'form' => $form,
         ]);
     }
-
-
 }

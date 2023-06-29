@@ -1,28 +1,9 @@
 
-/*
-
-.e-form-input {
-    background: $iv-main-white;
-    border: 1px solid $iv-goldBM;
-    border-radius: $iv-border-radius;
-    font-family: $iv-text-font-family;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-
-::placeholder {
-    padding-left: 10px;
-}
-
-}*/
-
 .form-check-input {
     width: 200px;
     height: 64px;
     padding: 0;
+    background: #2A3A74;
 }
 .form-check-input[type="radio"]{
     border-radius: 5px;
@@ -71,7 +52,8 @@
     float: none;
 }
 .form-check-input:checked{
-    background: yellow;
+    background: #788BCE;
+    border: none;
 }
 .col-form-label{
     color: black !important;
