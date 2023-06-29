@@ -14,7 +14,7 @@
         <div class="col-6">
             <div class="d-flex justify-content-center align-items-center" style="background-color: #00ACB0; z-index: -10; margin-top: -45px; height: 500px; width: 500px; border-radius: 50%; position: absolute; margin-left:135px; opacity: 25% "></div>
             <div class="my-5 mx-5 text-center">
-
+{% for telephone in telephone %}
                     <p style="font-family: 'Knewave', cursive; font-size: 75px"><strong>{{ telephone.model.name }}</strong></p>
                 <div class="d-flex align-items-center flex-column">
                     <div class="d-flex align-items-center">
@@ -45,7 +45,7 @@
                 </a>
             </div>
         </div>
-
+{% endfor %}
         <div class="col-3">
             <div class="d-flex justify-content-end">
                 <img src="{{ asset('/images/background_logo.png') }}" alt=""
