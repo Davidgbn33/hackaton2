@@ -102,7 +102,7 @@ class AppFixtures extends Fixture
         1 => ['name' => 'Iphone 11',
             'price' => 100,
             'image' => '',
-            'brand' => '3'],
+            'brand' => 3],
         2 => ['name' => 'Iphone 8',
             'price' => 50,
             'image' => '',
@@ -235,7 +235,7 @@ class AppFixtures extends Fixture
             $model->setName($value['name']);
             $model->setPrice($value['price']);
             $model->setImage($value['image']);
-            $model->setBrand($brand);
+            $model->setBrand($brands[$value['brand']-1]);
             $manager->persist($model);
 
             $models[] = $model;

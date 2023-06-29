@@ -66,5 +66,13 @@ class TelephoneController extends AbstractController
         ]);
     }
 
+    #[Route('/iphone', name: 'iphone', methods: ['GET'])]
+    public function iphone(TelephoneRepository $telephoneRepository): Response
+    {
 
+        $telephones = $telephoneRepository->findBy(['model' => 1]);
+        return $this->render('telephone/index.html.twig', [
+            'telephones' => $telephones,
+        ]);
+    }
 }
