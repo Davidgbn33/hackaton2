@@ -23,7 +23,7 @@ class Status
     private ?string $name = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $price = null;
+    private ?float $price = null;
 
     #[ORM\OneToMany(mappedBy: 'status', targetEntity: Telephone::class)]
     private Collection $telephone;

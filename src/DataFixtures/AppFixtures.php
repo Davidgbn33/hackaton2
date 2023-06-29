@@ -40,19 +40,25 @@ class AppFixtures extends Fixture
     ];
 
     public const STATUS = [
-        1 => [
-            'name' => 'Excellent',
-            'price' => 100
-        ],
+     1 => [
+            'name' => 'HS',
+            'price' => 0.5],
         2 => [
-            'name' => 'CORRECT',
-            'price' => 50],
-        3 => [
             'name' => 'REPARABLE',
-            'price' => 10],
-        4 => [
+            'price' => 0.5],
+        3 => [
             'name' => 'BLOQUER',
-            'price' => 5],
+            'price' => 0.9],
+        4 => [
+            'name' => 'RECONDITIONNABLE',
+            'price' => 0.95],
+        5=> [
+            'name' => 'RECONDITIONNE',
+            'price' => 1],
+      6=> [
+            'name' => 'COMME NEUF',
+            'price' => 1.1],
+
     ];
 
     public const MEMORY = [
@@ -64,24 +70,25 @@ class AppFixtures extends Fixture
             'price' => 60],
         4 => ['name' => '128',
             'price' => 80],
+      5 => ['name' => '128',
+            'price' => 60],
+        6 => ['name' => '512',
+            'price' => 80],
     ];
 
     public const RAM = [
-        1 => ['name' => '1',
-            'price' => 10],
-        2 => ['name' => '2',
-            'price' => 20],
-        3 => ['name' => '3',
+        
+        1 => ['name' => '3',
             'price' => 30],
-        4 => ['name' => '4',
+        2 => ['name' => '4',
             'price' => 40],
-        5 => ['name' => '6',
+        3 => ['name' => '6',
             'price' => 50],
-        6 => ['name' => '8',
+        4 => ['name' => '8',
             'price' => 60],
-        7 => ['name' => '12',
+        5 => ['name' => '12',
             'price' => 70],
-        8 => ['name' => '16',
+        6 => ['name' => '16',
             'price' => 80],
     ];
 
@@ -144,13 +151,12 @@ class AppFixtures extends Fixture
             'brand' => '6'],
     ];
     public const NETWORK = [
-        1 => ['name' => '2G',
-            'price' => 5],
-        2 => ['name' => '3G',
+       
+        1 => ['name' => '3G',
             'price' => 10],
-        3 => ['name' => '4G',
+        2 => ['name' => '4G',
             'price' => 15],
-        4 => ['name' => '5G',
+        3 => ['name' => '5G',
             'price' => 20],
     ];
     public const USER = [
