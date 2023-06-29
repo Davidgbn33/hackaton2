@@ -9,10 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SummaryController extends AbstractController
 {
-    #[Route('/summary', name: 'app_summary')]
-    public function index(TelephoneRepository $telephoneRepository): Response
+    #[Route('/summary/{id}', name: 'app_summary')]
+    public function index(TelephoneRepository $telephoneRepository, $id): Response
     {
-        $telephone = $telephoneRepository ->findBy(['id'=> 1]);
+        $telephone = $telephoneRepository ->findBy(['id'=> $id]);
+
         return $this->render('summary/index.html.twig', [
             'telephone' => $telephone,
         ]);

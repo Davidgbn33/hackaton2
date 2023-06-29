@@ -1,0 +1,18 @@
+.e-brandBoxPage{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.e-titleBrand{
+    background-color: #61BDFF;
+    opacity: 11%;
+}
+.e-oneBrand{
+    border-radius:8px;
+    box-shadow: gray 2px 2px;
+}
+.e-logoBrand{
+    width : 20vw;
+    height: 30vh;
+}

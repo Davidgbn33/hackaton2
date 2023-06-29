@@ -3,17 +3,24 @@
 {% block title %}Récapitulatif{% endblock %}
 
 {% block body %}
-<img src="" alt="">
-<div class="">
-    <h1>Récapitulatif de votre ajout</h1>
-    <p>{{ telephone.modelId }}</p>
-    <p>Mémoire : {{ telephone.memoryId }}</p>
-    <p>RAM : {{ telephone.ramId }}</p>
-    <p>Etat : {{ telephone.statusId }}</p>
-    <p>Prix de vente conseillé : {{ telephone.estimatedPrice }}</p>
-
-
-    <button type="button" class="btn btn-outline-dark"><a href="{{ app_telephone }}">Retour</a></button>
-    <button type="submit" class="btn btn-primary">Enregistrer</button>
-</div>
+    <img src="" alt="">
+    <div class="summary-container">
+        <h1>Récapitulatif de votre ajout</h1>
+        {% for telephone in telephone %}
+            <p><strong>{{ telephone.model.name }}</strong></p>
+            <p>Mémoire :
+                <button class="sumBtn btn btn-primary text-white p-3 mb-2">{{ telephone.memory.name }}</button>
+            </p>
+            <p>RAM :
+                <button class="sumBtn btn btn-primary text-white p-3 mb-2">{{ telephone.ram.name }}</button>
+            </p>
+            <p>Etat :
+                <button class="sumBtn btn btn-primary p-3 mb-2">{{ telephone.status.name }}</button>
+            </p>
+            <button class="sumBtnCustom btn btn-primary p-3 mb-2">Prix de vente conseillé {{ telephone.estimatedPrice }} €</button>
+        {% endfor %}
+        <br>
+        <button type="button" class="btn btn-outline-dark"><a href="">Retour</a></button>
+        <button type="submit" class="sumBtnCustom btn btn-primary">Enregistrer</button>
+    </div>
 {% endblock %}

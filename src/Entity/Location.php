@@ -20,7 +20,7 @@ class Location
     #[ORM\Column(length: 255)]
     private ?string $City = null;
 
-    #[ORM\OneToMany(mappedBy: 'location', targetEntity: user::class)]
+    #[ORM\OneToMany(mappedBy: 'location', targetEntity: User::class)]
     private Collection $user;
 
     public function __construct()

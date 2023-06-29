@@ -26,9 +26,6 @@ class Telephone
     private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'telephone')]
-    private ?Brand $brand = null;
-
-    #[ORM\ManyToOne(inversedBy: 'telephone')]
     private ?Model $model = null;
 
     #[ORM\ManyToOne(inversedBy: 'telephone')]
@@ -80,18 +77,6 @@ class Telephone
     public function setUser(?User $user): static
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    public function getBrand(): ?Brand
-    {
-        return $this->brand;
-    }
-
-    public function setBrand(?Brand $brand): static
-    {
-        $this->brand = $brand;
 
         return $this;
     }
