@@ -13,22 +13,26 @@
         </h2>
     <section class="e-brandBoxPage">
         <div class="e-oneBrandSn">
-            <img class="e-logoBrand" src="{{ asset('/images/sony.png') }}">
+            <a href="{{ path('sony') }}"><img class="e-logoBrand" src="{{ asset('/images/sony.png') }}"></a>
         </div>
         <div class="e-oneBrandAp">
-            <img class="e-logoBrand" src="{{ asset('/images/apple4.png') }}">
+
+            <a href="{{ path('iphone') }}">
+           <img class="e-logoBrand" src="{{ asset('/images/apple4.png') }}"></a>
+
         </div>
         <div class="e-oneBrandHw">
-            <img class="e-logoBrand" src="{{ asset('/images/huawei.png') }}">
+            <a href="{{ path('lg') }}"><img class="e-logoBrand" src="{{ asset('/images/lg.png') }}"></a>
         </div>
         <div class="e-oneBrandHw">
-            <img class="e-logoBrand" src="{{ asset('/images/lg.png') }}">
+            <a href="{{ path('huawei') }}"><img class="e-logoBrand" src="{{ asset('/images/huawei.png') }}"></a>
+
         </div>
         <div class="e-oneBrandXm">
-            <img class="e-logoBrand" src="{{ asset('/images/xiaomi.png') }}">
+            <a href="{{ path('xiaomi') }}"><img class="e-logoBrand" src="{{ asset('/images/xiaomi.png') }}"></a>
         </div>
         <div class="e-oneBrandSs">
-            <img class="e-logoBrand" src="{{ asset('/images/samsung.png') }}">
+            <a href="{{ path('samsung') }}"><img class="e-logoBrand" src="{{ asset('/images/samsung.png') }}"></a>
         </div>
     </section>
     {% include 'module/footer.html.twig' %}

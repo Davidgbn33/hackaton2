@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-white">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="{{ path('app_brand') }}"><img class="e-logoBrand" src="{{ asset('/images/logo.png') }}" style="height:100%; width:10vw"></a>
+        <a class="navbar-brand" href="{{ path('app_brand') }}"><img class="e-logoBrand" src="{{ asset('/images/logo-emmaus.png') }}" style="height:100%; width:10vw"></a>
 
         <div class="collapse navbar-collapse justify-content-center flex-grow-none
 " id="navbarSupportedContent">
@@ -19,7 +19,7 @@
                         <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
                         <li><a class="dropdown-item" href="{{ path('app_brand') }}">Ajouter un smartphone</a></li>
                         <li><a class="dropdown-item" href="{{ path('app_telephone_index') }}">Stock des smartphones</a></li>
-                        <li><a class="dropdown-item" href="#">FAQ</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_static_faq') }}">FAQ</a></li>
                         <li><a class="dropdown-item" href="#">EasyAdmin</a></li>
                     </ul>
                 </div>
