@@ -3,8 +3,6 @@
 {% block title %}New Telephone{% endblock %}
 
 {% block body %}
-    <h1>Create new Telephone</h1>
-
     {{ include('telephone/_form.html.twig') }}
 
     <a href="{{ path('app_telephone_index') }}">back to list</a>
