@@ -3,32 +3,81 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <style>
+        .navbar {
+            display: none;
+        }
+    </style>
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+    <section class="vh-100 gradient-custom">
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+               <img src="/images/background_logo.png" alt="" style="position: relative; width: 30%; margin-left: -60%; margin-top: -30%">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5 position-absolute">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                            <div class="">
+
+                                <h2 class="title-brand">
+                                    <span class="title-word title-word-1">Connectez</span>
+                                    <span class="title-word title-word-2">vous</span>
+                                </h2>
+                                <form method="POST">
+                                    <div class="form-outline form-white mb-4">
+                                        <label for="inputEmail"></label>
+                                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Adresse Email" class="form-control" autocomplete="email" required autofocus>
+
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <label for="inputPassword"></label>
+                                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" autocomplete="current-password" required>
+                                    </div>
+
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}">
+
+                                    <p class="small mb-5 pb-lg-2"><a class="text-decoration-none d-flex justify-content-end" style="color: #00ACB0" href="{{ path('app_forgot_password_request') }}">Mot de passe oublié?</a></p>
+
+                                <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0; color: white">Valider</button>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    {% endif %}
+    </section>
+
+    {#
+    <div class>
+<form method="post">
+
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+
+
+      #}
 
 
        {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html#}
 
-        <div class="checkbox mb-3">
+     {#    <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" name="_remember_me"> Remember me
             </label>
@@ -41,8 +90,11 @@
 </form>
     <div class="text-center ">
         <p class="$iv-main-darkgrey" >Première fois ? <a href="{{ path('app_register') }}" class="iv-color">Inscrivez-vous !</a></p>
-        <p class="$iv-main-darkgrey"><a href="{{ path('app_forgot_password_request') }}"> J’ai oublié mon mot de passe ?</a></p>
+        <p class="$iv-main-darkgrey"> J’ai oublié mon mot de passe ?</a></p>
 
 
     </div>
+
+    </div>  #}
+
 {% endblock %}

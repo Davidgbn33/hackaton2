@@ -3,30 +3,36 @@
 {% block title %}Hello BrandController!{% endblock %}
 
 {% block body %}
-    {{ dump() }}
-    <div class="e-titleBrand">
-<h1>Sélectionner la marque du téléphone</h1>
-    </div>
-
+    <div class="container-brand">
+        <h2 class="title-brand">
+            <span class="title-word title-word-1">Sélectionnez</span>
+            <span class="title-word title-word-2">la</span>
+            <span class="title-word title-word-3">marque</span>
+            <span class="title-word title-word-4">du</span>
+            <span class="title-word title-word-1">mobile</span>
+        </h2>
     <section class="e-brandBoxPage">
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/huawei.jpg') }}">
+        <div class="e-oneBrandSn">
+            <a href="{{ path('sony') }}"><img class="e-logoBrand" src="{{ asset('/images/sony.png') }}"></a>
         </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/apple.png') }}">
+        <div class="e-oneBrandAp">
+
+            <a href="{{ path('iphone') }}">
+           <img class="e-logoBrand" src="{{ asset('/images/apple4.png') }}"></a>
 
         </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/sony.jpg') }}">
+        <div class="e-oneBrandHw">
+            <a href="{{ path('lg') }}"><img class="e-logoBrand" src="{{ asset('/images/lg.png') }}"></a>
         </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/xiaomi.jpg') }}">
+        <div class="e-oneBrandHw">
+            <a href="{{ path('huawei') }}"><img class="e-logoBrand" src="{{ asset('/images/huawei.png') }}"></a>
         </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/apple.png') }}">
+        <div class="e-oneBrandXm">
+            <a href="{{ path('xiaomi') }}"><img class="e-logoBrand" src="{{ asset('/images/xiaomi.png') }}"></a>
         </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/lg.png') }}">
+        <div class="e-oneBrandSs">
+            <a href="{{ path('samsung') }}"><img class="e-logoBrand" src="{{ asset('/images/samsung.png') }}"></a>
         </div>
     </section>
+    {% include 'module/footer.html.twig' %}
 {% endblock %}
