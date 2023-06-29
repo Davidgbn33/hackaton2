@@ -1,8 +1,21 @@
 .sumBtn {
     background-color: rgba(0, 39, 67, 1);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    width: 180px;
+    height: 50px
 }
+.sumBtn:hover {
+    background-color: rgba(0, 39, 67, 1); !important;
+    color: white !important;
+    }
 
 .sumBtnCustom{
-    background-color: rgba(0, 172, 176, 1)
+    background-color: rgba(0, 172, 176, 1);
+    border: none;
+}
+
+.sumBtnCustom:hover {
+    background-color: rgba(0, 172, 176, 1); !important;
+    color: white !important;
 }
