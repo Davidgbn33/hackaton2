@@ -3,24 +3,53 @@
 {% block title %}Récapitulatif{% endblock %}
 
 {% block body %}
-    <img src="" alt="">
-    <div class="summary-container">
-        <h1>Récapitulatif de votre ajout</h1>
-        {% for telephone in telephone %}
-            <p><strong>{{ telephone.model.name }}</strong></p>
-            <p>Mémoire :
-                <button class="sumBtn btn btn-primary text-white p-3 mb-2">{{ telephone.memory.name }}</button>
-            </p>
-            <p>RAM :
-                <button class="sumBtn btn btn-primary text-white p-3 mb-2">{{ telephone.ram.name }}</button>
-            </p>
-            <p>Etat :
-                <button class="sumBtn btn btn-primary p-3 mb-2">{{ telephone.status.name }}</button>
-            </p>
-            <button class="sumBtnCustom btn btn-primary p-3 mb-2">Prix de vente conseillé {{ telephone.estimatedPrice }} €</button>
-        {% endfor %}
-        <br>
-        <button type="button" class="btn btn-outline-dark"><a href="">Retour</a></button>
-        <button type="submit" class="sumBtnCustom btn btn-primary">Enregistrer</button>
+    <div class="row">
+
+        <div class="col-3 d-flex justify-content-center align-items-center">
+            <img src="{{ asset('/images/Capture.png') }}" alt="" class="e-img"
+                 style="height:70vh; width:25vw; margin-left:8%; position:absolute; z-index: 4">
+        </div>
+
+        <div class="col-6">
+            <div class="my-5 mx-5 text-center">
+                <h1>Récapitulatif de votre ajout</h1>
+                {% for telephone in telephone %}
+                    <p><strong>{{ telephone.model.name }}</strong></p>
+                    <div class="d-flex align-items-center">
+                        <p>Mémoire :</p>
+                        <button class="btn text-white p-3 mb-2 mx-5 sumBtn d-flex align-items-center justify-content-center"
+                                style="border: none;">{{ telephone.memory.name }}</button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <p>RAM :</p>
+                        <button class="btn text-white p-3 mb-2 mx-5 sumBtn d-flex align-items-center justify-content-center"
+                                style="border: none;">{{ telephone.ram.name }}</button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <p>Etat :</p>
+                        <button class="btn text-white p-3 mb-2 mx-5 sumBtn d-flex align-items-center justify-content-center"
+                                style="border: none;">{{ telephone.status.name }}</button>
+                    </div>
+                    <button class="btn btn-primary text-white p-3 mb-2 sumBtnCustom"
+                            style="border: none; width: 410px; height: 70px;">Prix de vente
+                        conseillé {{ telephone.estimatedPrice }} €
+                    </button>
+                {% endfor %}
+                <br>
+                <button type="button" class="btn btn-outline-dark mx-lg-4" style="width: 180px; height: 50px;"><a
+                            href="">Retour</a></button>
+                <button type="submit" class="sumBtnCustom btn btn-primary mx-lg-4"
+                        style="border: none; width: 180px; height: 50px;">Enregistrer
+                </button>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="d-flex justify-content-end">
+                <img src="{{ asset('/images/background_logo.png') }}" alt=""
+                     style="position: fixed; bottom: 0; right: 0;">
+            </div>
+        </div>
     </div>
+
 {% endblock %}
