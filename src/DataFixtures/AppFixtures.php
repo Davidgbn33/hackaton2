@@ -42,20 +42,20 @@ class AppFixtures extends Fixture
     public const STATUS = [
         1 => [
             'name' => 'HS',
-            'price' => 100
+            'price' => 0
         ],
         2 => [
             'name' => 'REPARABLE',
-            'price' => 50],
+            'price' => 0.5],
         3 => [
             'name' => 'BLOQUER',
-            'price' => 10],
+            'price' => 0.9],
         4 => [
             'name' => 'RECONDITIONNABLE',
-            'price' => 5],
+            'price' => 0.95],
         5 => [
             'name' => 'RECONDITIONNE',
-            'price' => 0],
+            'price' => 1],
     ];
 
     public const MEMORY = [

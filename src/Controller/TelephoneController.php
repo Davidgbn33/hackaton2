@@ -119,8 +119,16 @@ class TelephoneController extends AbstractController
             $modelPrice = $telephone->getModel()->getPrice();
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
+            $cable_charger = $telephone->isCableCharger();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+
+
+            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -159,7 +167,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -198,7 +206,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -236,7 +244,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -275,7 +283,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -314,7 +322,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -344,7 +352,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
