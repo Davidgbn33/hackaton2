@@ -2,7 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Telephone;
 use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -41,5 +43,11 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
         yield MenuItem::linkToCrud('liste des utilsateurs', 'fas fa-list', User::class);
+
+        yield MenuItem::section('les téléphones');
+
+
+        yield    MenuItem::linkToCrud('Ajouter un téléphones', 'fas fa-plus-circle', Telephone::class)->setAction(crud::PAGE_NEW);
+        yield    MenuItem::linkToCrud('Liste des téléphones', 'fas fa-list', Telephone::class);
     }
 }
