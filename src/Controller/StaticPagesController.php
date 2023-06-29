@@ -15,4 +15,10 @@ class StaticPagesController extends AbstractController
             'controller_name' => 'StaticPagesController',
         ]);
     }
+
+    #[Route('/faqPage', name: 'app_static_faq')]
+    public function show(): Response
+    {
+        return $this->render('static_pages/faqPage.html.twig', []);
+    }
 }
