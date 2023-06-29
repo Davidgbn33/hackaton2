@@ -5,6 +5,7 @@
 @import "modules/footer.css";
 @import "modules/navbar.css";
 @import "modules/brandPage.css";
+@import "modules/faqPage.css";
 
 *{
     box-sizing: border-box;
