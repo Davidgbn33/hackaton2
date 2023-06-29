@@ -1,33 +1,28 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-white">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="Logo"></a>
+        <a class="navbar-brand" href="/"><img class="e-logoBrand" src="{{ asset('/images/logo.png') }}" style="height:100%; width:10vw"></a>
 
         <div class="collapse navbar-collapse justify-content-center flex-grow-none
 " id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Ajouter un smartphone</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Stock des smartphones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">EasyAdmin</a>
-                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end flex-grow-0" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link ">login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ">logout</a>
-                </li>
+                <div class="dropdown">
+                    <a class="btn text-muted dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="/">Se connecter</a></li>
+                        <li><a class="dropdown-item" href="/">Se déconnecter</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_brand') }}">Ajouter un smartphone</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_telephone_index') }}">Stock des smartphones</a></li>
+                        <li><a class="dropdown-item" href="#">FAQ</a></li>
+                        <li><a class="dropdown-item" href="#">EasyAdmin</a></li>
+                    </ul>
+                </div>
             </ul>
         </div>
     </div>
