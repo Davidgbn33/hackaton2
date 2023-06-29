@@ -20,6 +20,4 @@
 ###< symfony/phpunit-bridge ###
 .idea
 .DS_Store
-
-/composer.lock
 composer.lock

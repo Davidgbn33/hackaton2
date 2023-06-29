@@ -19,6 +19,9 @@ class TelephoneType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+
+        $Models = $options['models'];
+
         $builder
             ->add('cable_charger', BooleanFilterType::class, [
                 'label' => 'Cable chargeur',
@@ -31,6 +34,7 @@ class TelephoneType extends AbstractType
             ->add('model',EntityType::class,[
                 'class' => Model::class,
                 'choice_label' => 'name',
+                'choices' => $Models,
                 'multiple' => false,
                 'expanded' => true,
                 'by_reference' => false,
@@ -90,6 +94,7 @@ class TelephoneType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Telephone::class,
+            'models' => [],
         ]);
     }
 }

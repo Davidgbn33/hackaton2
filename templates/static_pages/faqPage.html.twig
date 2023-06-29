@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class=" d-flex align-items-center justify-content-center e-faqImage">
+    <h1 class="">Foire aux questions</h1>
+</div>
+
+{# FaQ accordion#}
+<div class="container d-flex justify-content-center e-accordion">
+    <div class="accordion w-75" id="accordionExample">
+        {# question one#}
+        <div class="accordion-item w-100">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <strong>Je souhaite rajouter un téléphone, comment dois-je m’y prendre ?</strong>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Connectez-vous avec vos identifiants
+                    Sélectionnez votre le choix « Ajouter un téléphone»
+                    Remplissez les renseignements obligatoires affichés puis cliquez sur suivant
+                    Vérifier que les éléments renseignés soient en adéquation avec les caractéristiques du téléphone
+                    Cliquer sur le bouton valider le téléphone
+                </div>
+            </div>
+        </div>
+        {# question two#}
+        <div class="accordion-item w-100">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <strong>Comment supprimer un téléphone ne pouvant plus être vendu ?</strong>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Contactez l’administrateur de votre établissement ou contacter l’assistance technique en
+                    ligne
+                    disponible du
+                    lundi au vendredi de 9h00 à 17h00
+                </div>
+            </div>
+        </div>
+        {# question three#}
+        <div class="accordion-item w-100">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <strong>Je me suis trompé sur une caractéristique du téléphone, comment modifier celle-ci ?</strong>
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Contactez l’administrateur de votre établissement ou contacter l’assistance technique en
+                    ligne
+                    disponible du
+                    lundi au vendredi de 9h00 à 17h00
+                </div>
+            </div>
+        </div>
+        {# question four#}
+        <div class="accordion-item w-100">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <strong>Comment générer la fiche technique du téléphone ?</strong>
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Suivez la procédure d’ajout du nouveau téléphone jusqu’à sa validation. Une fois le
+                    processus
+                    terminé
+                    vous serez redirigé vers la page concernant la fiche technique du téléphone que vous pourrez
+                    directement
+                    imprimer.
+                    Si vous souhaiter la réimprimer, veuillez contacter l’administrateur de votre établissement
+                    ou
+                    contacter
+                    l’assistance technique en ligne disponible du lundi au vendredi de 9h00 à 17h00
+                </div>
+            </div>
+        </div>
+        {# question five#}
+        <div class="accordion-item w-100">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <strong>Comment retrouver un téléphone sur l’application </strong>
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Vous pouvez consulter la liste des téléphones en consultant la base de données en tant
+                    qu’administrateur.
+                    Connectez-vous avec vos identifiants administrateur
+                    Cliquer sur accéder à la base de données
+                    La liste des téléphones vous sera proposée directement
+                    En tant que non administrateur vous pouvez consulter les téléphones disponibles sur le site
+                    emmaus-connect
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="e-logoPageFaq d-flex d-flex-row-reverse">
+    <img src="{{ asset('/images/logoConnect.png') }}" alt="" class="tata">
+</div>
+
+{% endblock %}

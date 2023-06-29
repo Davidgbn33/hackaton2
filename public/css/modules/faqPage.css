@@ -1,0 +1,30 @@
+.e-faqdrop{
+    padding-left: 1rem;
+    padding-right:1rem;
+}
+
+.e-faqImage{
+    height: 40vh;
+    background-image: url('/images/pageFaq.jpg');
+    background-size: cover;
+    width: 100%;
+}
+
+.e-logoPageFaq{
+    position: relative;
+    height: auto;
+    width: auto;
+}
+
+.e-accordion{
+    margin-top: 4rem;
+}
+
+.tata {
+    /* height: auto;
+    width: auto; */
+    z-index: -1;
+    position: fixed;
+    right: -66px;
+    bottom: -88px;
+}
