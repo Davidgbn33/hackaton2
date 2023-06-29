@@ -369,7 +369,7 @@ class TelephoneController extends AbstractController
     #[Route('/{id}', name: 'app_telephone_show', methods: ['GET'])]
     public function show(Telephone $telephone): Response
     {
-        return $this->render('telephone/show.html.twig', [
+        return $this->render('summary/index.html.twig', [
             'telephone' => $telephone,
         ]);
     }
