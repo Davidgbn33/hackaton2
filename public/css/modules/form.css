@@ -89,3 +89,18 @@
 #telephone_cable_charger {
     display: flex;
 }
+fieldset legend{
+    font-family: 'Belanosima', sans-serif;
+}
+.my-custom-checkbox-label1{
+    margin-left:10%;
+}
+.form-check .form-check-label{
+    margin-left:0;
+}
+.vh-100 form{
+    margin-top:10%;
+}
+.vh-100{
+    margin-left:10%;
+}
