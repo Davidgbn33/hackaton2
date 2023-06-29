@@ -3,23 +3,30 @@
 {% block title %}Telephone index{% endblock %}
 
 {% block body %}
-    <h1>Liste des Telephones</h1>
+    <h2 class="title-brand" style="text-align:center; margin-bottom: 5%">
+        <span class="title-word title-word-1">Liste</span>
+        <span class="title-word title-word-2">de</span>
+        <span class="title-word title-word-3">tous</span>
+        <span class="title-word title-word-4">les</span>
+        <span class="title-word title-word-1">télephones</span>
+    </h2>
 
-    <table class="table">
+
+    <table class="table" style="width:80vw; margin-left: 10%; box-shadow: darkgray 1px 1px 1px 1px">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>model</th>
-                <th>ram</th>
-                <th>memoire</th>
-                <th>Réseau</th>
-                <th>Cable_charger</th>
-                <th>Etat</th>
-                <th>EstimatedPrice</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>model</th>
+            <th>ram</th>
+            <th>memoire</th>
+            <th>Réseau</th>
+            <th>Cable_charger</th>
+            <th>Etat</th>
+            <th>EstimatedPrice</th>
+            <th>CreatedAt</th>
+            <th>UpdatedAt</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for telephone in telephones %}
@@ -41,10 +48,14 @@
         {% else %}
             <tr>
                 <td colspan="6">no records found</td>
-            </tr>
+            </tr>a
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('iphone_new') }}">Create new</a>
+    <div class="add-new-by-form" style="display: flex; justify-content: center; margin-right:5%">
+        <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; width:150px; margin-top:3%" href="{{ path('apple_new') }}">Ajouter</a>
+    </div>
+    <div class="e-logoPageFaq d-flex d-flex-row-reverse">
+        <img src="{{ asset('/images/logoConnect.png') }}" alt="" class="tata">
+    </div>
 {% endblock %}

@@ -4,7 +4,41 @@
 
 {% block body %}
     {{ include('telephone/_form.html.twig') }}
+    {#<script>
+        // Fonction pour vérifier si l'élément est visible dans la fenêtre
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
 
-    <a href="{{ path('app_telephone_index') }}">back to list</a>
-    {{ include ('module/footer.html.twig') }}
+        // Fonction pour gérer le scroll
+        function handleScroll() {
+            var eWidth = document.querySelector('.e-width');
+            var footer = document.querySelector('#back-to-list-link');
+            var footerRect = footer.getBoundingClientRect();
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            if (isElementInViewport(footer)) {
+                var eWidthRect = eWidth.getBoundingClientRect();
+                var eWidthHeight = eWidthRect.height;
+                var maxTop = windowHeight - eWidthHeight - footerRect.height - 20; // 20 is an arbitrary margin value
+
+                eWidth.style.position = 'absolute';
+                eWidth.style.top = maxTop + 'px';
+                eWidth.style.transform = 'none';
+            } else {
+                eWidth.style.position = 'fixed';
+                eWidth.style.top = '300px';
+                eWidth.style.transform = 'translateY(20%) translateX(2%)';
+            }
+        }
+
+        // Écouteur d'événement pour le scroll
+        window.addEventListener('scroll', handleScroll);
+    </script>#}
 {% endblock %}
