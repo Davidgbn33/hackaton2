@@ -103,4 +103,8 @@ fieldset legend{
 }
 .vh-100{
     margin-left:10%;
+    margin-right:10%;
+}
+.mb-3 .my-custom-checkbox-label{
+    margin-top:3%;
 }
