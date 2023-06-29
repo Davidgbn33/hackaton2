@@ -58,6 +58,7 @@
 .col-form-label{
     color: black !important;
     top: -4px !important;
+    font-size: 2rem;
 }
 .my-custom-checkbox-label1{
     display: flex;
@@ -84,4 +85,7 @@
     width: 200px;
     height: 200px;
     color: green;
+}
+#telephone_cable_charger {
+    display: flex;
 }

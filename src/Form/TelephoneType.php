@@ -32,6 +32,7 @@ class TelephoneType extends AbstractType
 
 
             ->add('model',EntityType::class,[
+                'label' => 'Modèle',
                 'class' => Model::class,
                 'choice_label' => 'name',
                 'choices' => $Models,
@@ -55,6 +56,7 @@ class TelephoneType extends AbstractType
 
             ])
             ->add('memory', EntityType::class, [
+                'label' => 'Mémoire',
                 'class' => Memory::class,
                 'choice_label' => 'name',
                 'multiple' => false,
@@ -77,6 +79,7 @@ class TelephoneType extends AbstractType
 
             ])
             ->add('status', EntityType::class, [
+                'label' => 'Etat',
                 'class' => Status::class,
                 'choice_label' => 'name',
                 'multiple' => false,

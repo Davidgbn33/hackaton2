@@ -7,42 +7,45 @@
         <img src="{{ asset('/images/iphone-addNewTel.png') }}" alt="" class="e-img" style="height:50vh; width:20vw; margin-left:8%; position:absolute; z-index: -1">
     </div>
 
-    <div class="d-flex justify-content-center e-form me-5"  style="flex-direction: column; z-index: 100">
+    <div class="d-flex justify-content-center e-form me-5"  style="flex-direction: column; z-index: 100;border: none;">
 
         <div class="">
 
-            <div class="vh-100 d-flex flex-wrap" id="model">
+            <div class="vh-100 d-flex flex-wrap justify-content-center" id="model">
                 {{ form_start(form) }}
                 {{ form_row(form.model) }}
+
                 {{ form_row(form.cable_charger) }}
-                <div class="" style="padding-left: 1.5rem">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px" href="#memory">Next</a>
+
+                <div class="d-flex justify-content-center" style="">
+                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px;border: none;" href="#memory">Next</a>
                 </div>
             </div>
 
-            <div class="vh-100 d-flex flex-wrap" id="memory">
+            <div class="vh-100 d-flex flex-wrap justify-content-center" id="memory">
                 {{ form_row(form.memory) }}
+                {{ form_row(form.RAM) }}
                 <div class="" style="padding-left: 1.5rem">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px" href="#model">Return</a>
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white" href="#network">Next</a>
+                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px;border: none;" href="#model">Return</a>
+                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; border: none;" href="#network">Next</a>
                 </div>
             </div>
 
-            <div class="vh-100 d-flex flex-wrap" id="network">
+            <div class="vh-100 d-flex flex-wrap justify-content-center" id="network">
                 {{ form_row(form.network) }}
                 {{ form_row(form.status) }}
                 <div class="" style="padding-left: 1.5rem">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px" href="#memory">Return</a>
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white" href="#RAM">Next</a>
+                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0;border: none; color: white; margin-right: 10px"  href="#memory">Return</a>
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0;border: none; color: white">{{ button_label|default('Save') }}</button>
                 </div>
-            </div>
 
-            <div class="vh-100 d-flex flex-wrap" id="RAM">
+           {# <div class="vh-100 d-flex flex-wrap justify-content-center" id="RAM">
+                {{ form_row(form.memory) }}
                 {{ form_row(form.RAM) }}
                 <div class="" style="padding-left: 1.5rem">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px"  href="#network">Return</a>
-                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0; color: white">{{ button_label|default('Save') }}</button>
-                </div>
+                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0;border: none; color: white; margin-right: 10px"  href="#network">Return</a>
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0;border: none; color: white">{{ button_label|default('Save') }}</button>
+                </div>#}
             </div>
 
         </div>

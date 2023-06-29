@@ -30,7 +30,7 @@ class TelephoneCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-yield AssociationField::new('user', 'Utilisateur');
+
          yield  AssociationField::new('model');
         yield  AssociationField::new('RAM');
         yield  AssociationField::new('memory');
