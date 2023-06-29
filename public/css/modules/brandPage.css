@@ -1,3 +1,4 @@
+/*          TITLE           */
 .title-word {
     animation: color-animation 4s linear infinite;
 }
@@ -36,7 +37,7 @@
     100%  {color: var(--color-1)}
 }
 
-/* Here are just some visual styles. 🖌 */
+/* END OF TITLE */
 
 .container-brand {
     display: grid;
@@ -60,6 +61,9 @@
     border-radius:8px;
     margin-left:10%;
 }
+
+
+/*      BRAND CIRCLE*/
 
 .e-oneBrandAp{
     border-radius: 50%;
@@ -146,3 +150,4 @@
     position: absolute;
     z-index: 1;
 }
+/*      BRAND CIRCLE*/
