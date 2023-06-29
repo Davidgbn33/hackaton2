@@ -3,30 +3,40 @@
 {% block title %}Hello BrandController!{% endblock %}
 
 {% block body %}
-    {{ dump() }}
+    <div class="container-brand">
+        <h2 class="title-brand">
+            <span class="title-word title-word-1">Sélectionnez</span>
+            <span class="title-word title-word-2">la</span>
+            <span class="title-word title-word-3">marque</span>
+            <span class="title-word title-word-4">du</span>
+            <span class="title-word title-word-1">mobile</span>
+        </h2>
     <div class="e-titleBrand">
 <h1>Sélectionner la marque du téléphone</h1>
     </div>
-
+    <img class="e-color" src="{{ asset('/images/color-logo.png') }}" style="rotate: 120deg; margin-left:-10%">
     <section class="e-brandBoxPage">
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/huawei.jpg') }}">
+        <div class="e-oneBrandSn">
+            <img class="e-logoBrand" src="{{ asset('/images/sony.png') }}">
         </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/apple.png') }}">
-
-        </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/sony.jpg') }}">
-        </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/xiaomi.jpg') }}">
-        </div>
-        <div class="e-oneBrand">
+        <div class="e-oneBrandAp">
             <img class="e-logoBrand" src="{{ asset('/images/apple.png') }}">
         </div>
-        <div class="e-oneBrand">
-            <img class="e-logoBrand" src="{{ asset('/images/lg.png') }}">
+        <div class="e-oneBrandHw">
+            <img class="e-logoBrand" src="{{ asset('/images/huawei.png') }}">
+        </div>
+        <div class="e-oneBrandHw">
+            <img class="e-logoBrand" src="{{ asset('/images/huawei.png') }}">
+        </div>
+        <div class="e-oneBrandXm">
+            <img class="e-logoBrand" src="{{ asset('/images/xiaomi.png') }}">
+        </div>
+        <div class="e-oneBrandSs">
+            <img class="e-logoBrand" src="{{ asset('/images/samsung.png') }}">
         </div>
     </section>
+    <img class="e-color" src="{{ asset('/images/color-logo.png') }}" style="rotate: -60deg; margin-left:90%; margin-top:-40%">
+    <img class="e-color" src="{{ asset('/images/color-logo.png') }}" style="rotate: -60deg; margin-left:90%; margin-top:-10%">
+    {% include 'module/footer.html.twig' %}
 {% endblock %}
+
