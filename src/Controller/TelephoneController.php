@@ -122,13 +122,18 @@ class TelephoneController extends AbstractController
             $cable_charger = $telephone->isCableCharger();
 
             if (!$cable_charger) {
-                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou cables');
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
 
                 return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
             }
 
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -167,7 +172,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -206,7 +211,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -244,7 +249,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -283,7 +288,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -352,7 +357,7 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice * $conditionPrice;
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
