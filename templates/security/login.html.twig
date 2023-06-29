@@ -15,6 +15,7 @@
     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
+
     {% if app.user %}
     <div class="mb-3">
         You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
@@ -58,6 +59,7 @@
                                 <button class="btn btn-outline-dark btn-lg px-5 border-0" type="submit"
                                     style="background-color: #00ACB0; color: white">Valider</button>
                             </form>
+
 
                         </div>
 
