@@ -119,13 +119,28 @@ class TelephoneController extends AbstractController
             $modelPrice = $telephone->getModel()->getPrice();
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
+            $cable_charger = $telephone->isCableCharger();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+
+
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
-            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+            $id = $telephone->getId();
+
+            return $this->redirectToRoute('app_summary', ['id'=> $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('telephone/new.html.twig', [
@@ -159,7 +174,19 @@ class TelephoneController extends AbstractController
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            $cable_charger = $telephone->isCableCharger();
+
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -197,8 +224,20 @@ class TelephoneController extends AbstractController
             $modelPrice = $telephone->getModel()->getPrice();
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
+            $cable_charger = $telephone->isCableCharger();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -235,8 +274,20 @@ class TelephoneController extends AbstractController
             $modelPrice = $telephone->getModel()->getPrice();
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
+            $cable_charger = $telephone->isCableCharger();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -274,8 +325,20 @@ class TelephoneController extends AbstractController
             $modelPrice = $telephone->getModel()->getPrice();
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
+            $cable_charger = $telephone->isCableCharger();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -313,8 +376,20 @@ class TelephoneController extends AbstractController
             $modelPrice = $telephone->getModel()->getPrice();
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
+            $cable_charger = $telephone->isCableCharger();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -343,8 +418,20 @@ class TelephoneController extends AbstractController
             $modelPrice = $telephone->getModel()->getPrice();
             $memoryPrice = $telephone->getMemory()->getPrice();
             $conditionPrice = $telephone->getStatus()->getPrice();
+            $cable_charger = $telephone->isCableCharger();
 
-            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+            if (!$cable_charger) {
+                $this->addFlash('danger', 'Pas vendable car pas de chargeur ou de cables');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+            if ( $conditionPrice == 0) {
+                $this->addFlash('danger', 'Pas vendable car produit HS');
+
+                return $this->redirectToRoute('app_brand', [], Response::HTTP_SEE_OTHER);
+            }
+
+            $estimatedPrice = ($ramPrice + $networkPrice + $modelPrice + $memoryPrice) * $conditionPrice;
 
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
@@ -361,7 +448,7 @@ class TelephoneController extends AbstractController
     #[Route('/{id}', name: 'app_telephone_show', methods: ['GET'])]
     public function show(Telephone $telephone): Response
     {
-        return $this->render('telephone/show.html.twig', [
+        return $this->render('summary/index.html.twig', [
             'telephone' => $telephone,
         ]);
     }

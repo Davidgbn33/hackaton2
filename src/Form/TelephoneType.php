@@ -68,6 +68,7 @@ class TelephoneType extends AbstractType
 
             ])
             ->add('network', EntityType::class, [
+                'label' => 'Réseau',
                 'class' => Network::class,
                 'choice_label' => 'name',
                 'multiple' => false,

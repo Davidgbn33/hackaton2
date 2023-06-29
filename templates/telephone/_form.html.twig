@@ -1,8 +1,8 @@
 <div class="d-flex h-100" style="position: relative">
 
 
-    <div class="e-width" style="position:sticky; top:280px;transform: translateY(13%) translateX(2%); height: 100%">
-        <div class="e-blue-square" style="width:19.5vw; height: 33vh; background-color: #61BDFF; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-72%); rotate:30deg;"></div>
+    <div class="e-width" style="position:sticky; top:23vw;transform: translateY(13%) translateX(2%); height: 100%">
+        <div class="e-blue-square" style="width:19vw; height: 34vh; background-color: #61BDFF; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-72%); rotate:26deg;"></div>
         <div class="e-yellow-square" style="width:19.5vw; height: 33vh; background-color: #FFB84D; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-50%) translateX(11%)"></div>
         <img src="{{ asset('/images/iphone-addNewTel.png') }}" alt="" class="e-img" style="height:50vh; width:20vw; margin-left:8%; position:absolute; z-index: -1">
     </div>
@@ -36,9 +36,8 @@
                 {{ form_row(form.status) }}
                 <div class="" style="padding-left: 1.5rem">
                     <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0;border: none; color: white; margin-right: 10px"  href="#memory">Return</a>
-                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0;border: none; color: white">{{ button_label|default('Save') }}</button>
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0;color: white; border:none">{{ button_label|default('Save') }}</button>
                 </div>
-
            {# <div class="vh-100 d-flex flex-wrap justify-content-center" id="RAM">
                 {{ form_row(form.memory) }}
                 {{ form_row(form.RAM) }}
