@@ -20,7 +20,6 @@
 }*/
 
 .form-check-input {
-    background: #002743;
     width: 200px;
     height: 64px;
     padding: 0;
@@ -97,4 +96,10 @@
 .e-width{
     width: 30%;
     position:sticky;
+}
+
+.my-custom-input-class {
+    width: 200px;
+    height: 200px;
+    color: green;
 }
