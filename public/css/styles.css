@@ -8,6 +8,7 @@
 @import "modules/brandPage.css";
 @import "modules/faqPage.css";
 @import "modules/summary.css";
+@import "modules/security.css";
 
 *{
     box-sizing: border-box;
