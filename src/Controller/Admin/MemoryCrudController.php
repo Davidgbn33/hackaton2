@@ -20,7 +20,7 @@ class MemoryCrudController extends AbstractCrudController
     {
 
         yield    IdField::new('id')->hideOnForm();
-        yield    TextField::new('name', 'Nom');
+        yield    TextField::new('name', 'Capacité');
         yield    IntegerField::new('price','Prix');
 
     }
