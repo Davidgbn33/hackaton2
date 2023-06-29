@@ -2,12 +2,12 @@
 
 {% block body %}
 
-<div class=" d-flex align-items-center justify-content-center e-faqImage">
+<div class=" d-flex align-items-center justify-content-center e-faqImage" style="margin-top:-1.5%; ">
     <h1 class="">Foire aux questions</h1>
 </div>
 
-
-<div class="container d-flex justify-content-center e-accordion">
+{# FaQ accordion#}
+<div class="container d-flex justify-content-center e-accordion" style="margin-bottom:5%">
     <div class="accordion w-75" id="accordionExample">
         {# question one#}
         <div class="accordion-item w-100">
@@ -109,5 +109,5 @@
 <div class="e-logoPageFaq d-flex d-flex-row-reverse">
     <img src="{{ asset('/images/logoConnect.png') }}" alt="" class="tata">
 </div>
-
+    {% include 'module/footer.html.twig' %}
 {% endblock %}
