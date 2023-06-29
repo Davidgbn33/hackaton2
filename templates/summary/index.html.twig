@@ -4,8 +4,6 @@
 
 {% block body %}
 
-
-
     <div class="row">
 
         <div class="col-3 d-flex justify-content-center align-items-center">
@@ -16,7 +14,7 @@
         <div class="col-6">
             <div class="d-flex justify-content-center align-items-center" style="background-color: #00ACB0; z-index: -10; margin-top: -45px; height: 500px; width: 500px; border-radius: 50%; position: absolute; margin-left:135px; opacity: 25% "></div>
             <div class="my-5 mx-5 text-center">
-                {% for telephone in telephone %}
+
                     <p style="font-family: 'Knewave', cursive; font-size: 75px"><strong>{{ telephone.model.name }}</strong></p>
                 <div class="d-flex align-items-center flex-column">
                     <div class="d-flex align-items-center">
@@ -38,7 +36,7 @@
                             style="border: none; width: 410px; height: 70px; margin-top: 50px">Prix de vente
                         conseillé <b><i> {{ telephone.estimatedPrice }} € </i></b></button>
                 </div>
-                    {% endfor %}
+
                 <br>
                 <a href="/brand"></a>
                 <button type="submit" class="sumBtnCustom btn btn-primary mx-lg-4"
