@@ -20,7 +20,7 @@ class Brand
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'brand', targetEntity: Model::class)]
+    #[ORM\OneToMany(mappedBy: 'Brand', targetEntity: Model::class)]
     private Collection $models;
 
     #[ORM\Column(length: 255)]

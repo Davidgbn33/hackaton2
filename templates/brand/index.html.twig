@@ -11,16 +11,15 @@
             <span class="title-word title-word-4">du</span>
             <span class="title-word title-word-1">mobile</span>
         </h2>
-    <div class="e-titleBrand">
-<h1>Sélectionner la marque du téléphone</h1>
-    </div>
-    <img class="e-color" src="{{ asset('/images/color-logo.png') }}" style="rotate: 120deg; margin-left:-10%">
     <section class="e-brandBoxPage">
         <div class="e-oneBrandSn">
             <a href="{{ path('sony') }}"><img class="e-logoBrand" src="{{ asset('/images/sony.png') }}"></a>
         </div>
         <div class="e-oneBrandAp">
-            <a href="{{ path('iphone') }}"><img class="e-logoBrand" src="{{ asset('/images/apple.png') }}"></a>
+
+            <a href="{{ path('iphone') }}">
+           <img class="e-logoBrand" src="{{ asset('/images/apple4.png') }}"></a>
+
         </div>
         <div class="e-oneBrandHw">
             <a href="{{ path('lg') }}"><img class="e-logoBrand" src="{{ asset('/images/lg.png') }}"></a>
@@ -35,8 +34,5 @@
             <a href="{{ path('samsung') }}"><img class="e-logoBrand" src="{{ asset('/images/samsung.png') }}"></a>
         </div>
     </section>
-    <img class="e-color" src="{{ asset('/images/color-logo.png') }}" style="rotate: -60deg; margin-left:90%; margin-top:-40%">
-    <img class="e-color" src="{{ asset('/images/color-logo.png') }}" style="rotate: -60deg; margin-left:90%; margin-top:-10%">
     {% include 'module/footer.html.twig' %}
 {% endblock %}
-

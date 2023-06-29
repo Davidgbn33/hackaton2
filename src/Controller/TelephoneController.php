@@ -258,6 +258,17 @@ class TelephoneController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $telephone->setUser($this->getUser());
+            $ramPrice = $telephone->getRAM()->getPrice();
+            $networkPrice = $telephone->getNetwork()->getPrice();
+            $modelPrice = $telephone->getModel()->getPrice();
+            $memoryPrice = $telephone->getMemory()->getPrice();
+            $conditionPrice = $telephone->getStatus()->getPrice();
+
+            $estimatedPrice = $ramPrice + $networkPrice + $modelPrice + $memoryPrice + $conditionPrice;
+
+            $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
             return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
