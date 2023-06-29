@@ -23,14 +23,14 @@ class TelephoneController extends AbstractController
         ]);
     }
 
-    #[Route('/iphone', name: 'iphone', methods: ['GET'])]
-    public function iphone(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
+    #[Route('/apple', name: 'apple', methods: ['GET'])]
+    public function apple(TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'Apple']);
         $models = $modelRepository->findBy(['brand' => $brand]);
         $telephones = $telephoneRepository->findBy(['model' => $models]);
 
-        return $this->render('telephone/index.html.twig', [
+        return $this->render('telephone/apple.html.twig', [
             'telephones' => $telephones,
         ]);
     }
@@ -123,7 +123,7 @@ class TelephoneController extends AbstractController
         ]);
     }
 
-    #[Route('/iphone/new', name: 'iphone_new', methods: ['GET', 'POST'])]
+    #[Route('/apple/new', name: 'apple_new', methods: ['GET', 'POST'])]
     public function iphoneNew(Request $request, TelephoneRepository $telephoneRepository, ModelRepository $modelRepository, BrandRepository $brandRepository): Response
     {
         $brand = $brandRepository->findOneBy(['name' => 'Apple']);
