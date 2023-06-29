@@ -108,3 +108,15 @@ fieldset legend{
 .mb-3 .my-custom-checkbox-label{
     margin-top:3%;
 }
+#telephone_network{
+    display:flex;
+    justify-content: space-around;
+    width:110%;
+    margin-left:-3%;
+}
+.vh-100 .mb-3{
+    width:100%;
+}
+#telephone_network .form-check{
+    padding-left:0%;
+}
