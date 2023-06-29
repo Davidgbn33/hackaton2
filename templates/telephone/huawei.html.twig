@@ -36,7 +36,6 @@
                 <td>{{ telephone.updatedAt ? telephone.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_telephone_show', {'id': telephone.id}) }}">show</a>
-                    <a href="{{ path('app_telephone_edit', {'id': telephone.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
