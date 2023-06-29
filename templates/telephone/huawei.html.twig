@@ -7,19 +7,19 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>model</th>
-                <th>ram</th>
-                <th>memoire</th>
-                <th>Réseau</th>
-                <th>Cable_charger</th>
-                <th>Etat</th>
-                <th>EstimatedPrice</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>model</th>
+            <th>ram</th>
+            <th>memoire</th>
+            <th>Réseau</th>
+            <th>Cable_charger</th>
+            <th>Etat</th>
+            <th>EstimatedPrice</th>
+            <th>CreatedAt</th>
+            <th>UpdatedAt</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for telephone in telephones %}
@@ -47,5 +47,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('iphone_new') }}">Create new</a>
+    <a href="{{ path('huawei_new') }}">Create new</a>
 {% endblock %}
