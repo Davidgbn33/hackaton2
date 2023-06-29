@@ -8,15 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class StaticPagesController extends AbstractController
 {
-    #[Route('/static/pages', name: 'app_static_pages')]
-    public function index(): Response
+    #[Route('/cookies', name: 'app_static_cookies')]
+    public function cookies(): Response
     {
-        return $this->render('static_pages/index.html.twig', [
-            'controller_name' => 'StaticPagesController',
-        ]);
+        return $this->render('static_pages/cookies.html.twig');
     }
 
-    #[Route('/faqPage', name: 'app_static_faq')]
+    #[Route('/mentionLegale', name: 'app_static_legale')]
+    public function mentionLegale(): Response
+    {
+        return $this->render('static_pages/mentionlegale.html.twig');
+    }
+
+
+
+    #[Route('/faqPages', name: 'app_static_faq')]
     public function show(): Response
     {
         return $this->render('static_pages/faqPage.html.twig', []);
