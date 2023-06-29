@@ -2,51 +2,69 @@
 
 namespace App\Controller;
 
+use App\Entity\Telephone;
+use App\Form\TelephoneType;
+use App\Repository\TelephoneRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/telephone')]
 class TelephoneController extends AbstractController
 {
-    #[Route('/iphone', name: 'app_telephone')]
-    public function iphone(): Response
+    #[Route('/', name: 'app_telephone_index', methods: ['GET'])]
+    public function index(TelephoneRepository $telephoneRepository): Response
     {
-        return $this->render('telephoneChoice/Iphone.html.twig', [
+        return $this->render('telephone/index.html.twig', [
+            'telephones' => $telephoneRepository->findAll(),
         ]);
     }
 
-    #[Route('/lg', name: 'app_telephone')]
-    public function lg(): Response
+    #[Route('/new', name: 'app_telephone_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, TelephoneRepository $telephoneRepository): Response
     {
-        return $this->render('telephoneChoice/lg.html.twig', [
+        $telephone = new Telephone();
+        $form = $this->createForm(TelephoneType::class, $telephone);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $telephoneRepository->save($telephone, true);
+
+            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('telephone/new.html.twig', [
+            'telephone' => $telephone,
+            'form' => $form,
         ]);
     }
 
-    #[Route('/samsung', name: 'app_telephone')]
-    public function samsung(): Response
+    #[Route('/{id}', name: 'app_telephone_show', methods: ['GET'])]
+    public function show(Telephone $telephone): Response
     {
-        return $this->render('telephoneChoice/samsung.html.twig', [
+        return $this->render('telephone/show.html.twig', [
+            'telephone' => $telephone,
         ]);
     }
 
-    #[Route('/huawei', name: 'app_telephone')]
-    public function huawei(): Response
+    #[Route('/{id}/edit', name: 'app_telephone_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Telephone $telephone, TelephoneRepository $telephoneRepository): Response
     {
-        return $this->render('telephoneChoice/huawei.html.twig', [
+        $form = $this->createForm(TelephoneType::class, $telephone);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $telephoneRepository->save($telephone, true);
+
+            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('telephone/edit.html.twig', [
+            'telephone' => $telephone,
+            'form' => $form,
         ]);
     }
 
-    #[Route('/xiaomi', name: 'app_telephone')]
-    public function xiaomi(): Response
-    {
-        return $this->render('telephoneChoice/xiaomi.html.twig', [
-        ]);
-    }
 
-    #[Route('/sony', name: 'app_telephone')]
-    public function sony(): Response
-    {
-        return $this->render('telephoneChoice/sony.html.twig', [
-        ]);
-    }
 }

@@ -24,11 +24,11 @@ class Model
     #[ORM\Column(nullable: true)]
     private ?int $price = null;
 
-    #[ORM\OneToMany(mappedBy: 'model', targetEntity: telephone::class)]
+    #[ORM\OneToMany(mappedBy: 'model', targetEntity: Telephone::class)]
     private Collection $telephone;
 
     #[ORM\ManyToOne(inversedBy: 'models')]
-    private ?brand $brand = null;
+    private ?Brand $brand = null;
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;

@@ -1,0 +1,24 @@
+<div class="d-flex">
+<div class="e-width">
+    <img src="{{ asset('/images/apple.png') }}" alt="" class="e-img">
+</div>
+<div class="d-flex justify-content-center e-form me-5">
+    <div class=" d-flex">
+{{ form_start(form) }}
+{{ form_row(form.model) }}
+        <div class="d-flex justify-content-center">
+{{ form_row(form.memory) }}
+    </div>
+{{ form_row(form.network) }}
+{{ form_row(form.status) }}
+        <div>
+{{ form_row(form.RAM) }}
+    </div>
+        <div class="d-flex justify-content-center">
+{{ form_row(form.cable_charger) }}
+    </div>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+</div>
+</div>
+</div>
