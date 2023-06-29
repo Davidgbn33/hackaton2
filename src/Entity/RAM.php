@@ -23,7 +23,7 @@ class RAM
     #[ORM\Column(nullable: true)]
     private ?int $price = null;
 
-    #[ORM\OneToMany(mappedBy: 'RAM', targetEntity: telephone::class)]
+    #[ORM\OneToMany(mappedBy: 'RAM', targetEntity: Telephone::class)]
     private Collection $telephone;
 
     public function __construct()

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Telephone{% endblock %}
+
+{% block body %}
+    {{ include('telephone/_form.html.twig') }}
+
+    <a href="{{ path('app_telephone_index') }}">back to list</a>
+    {{ include ('module/footer.html.twig') }}
+{% endblock %}

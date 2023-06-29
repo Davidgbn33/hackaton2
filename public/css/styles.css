@@ -4,12 +4,16 @@
 @import "modules/card.css";
 @import "modules/footer.css";
 @import "modules/navbar.css";
+@import "modules/login.css";
+
 @import "modules/brandPage.css";
 @import "modules/faqPage.css";
+
 
 *{
     box-sizing: border-box;
 }
+
 
 body {
     background-color: var(--e-color-background);
