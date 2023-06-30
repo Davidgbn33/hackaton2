@@ -2,12 +2,17 @@
 
 
     <div class="e-width" style="position:sticky; top:23vw;transform: translateY(13%) translateX(2%); height: 100%">
-        <div class="e-blue-square" style="width:19vw; height: 34vh; background-color: #61BDFF; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-72%); rotate:26deg;"></div>
-        <div class="e-yellow-square" style="width:19.5vw; height: 33vh; background-color: #FFB84D; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-50%) translateX(11%)"></div>
-        <img src="{{ asset('/images/iphone-addNewTel.png') }}" alt="" class="e-img" style="height:50vh; width:20vw; margin-left:8%; position:absolute; z-index: -1">
+        <div class="e-blue-square"
+            style="width:19vw; height: 34vh; background-color: #61BDFF; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-72%); rotate:26deg;">
+        </div>
+        <div class="e-yellow-square"
+            style="width:19.5vw; height: 33vh; background-color: #FFB84D; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-50%) translateX(11%)">
+        </div>
+        <img src="{{ asset('/images/iphone-addNewTel.png') }}" alt="" class="e-img"
+            style="height:50vh; width:20vw; margin-left:8%; position:absolute; z-index: -1">
     </div>
 
-    <div class="d-flex justify-content-center e-form me-5"  style="flex-direction: column; z-index: 100;border: none;">
+    <div class="d-flex justify-content-center e-form me-5" style="flex-direction: column; z-index: 100;border: none;">
 
         <div class="">
 
@@ -18,39 +23,92 @@
                 {{ form_row(form.cable_charger) }}
 
                 <div class="d-flex justify-content-center" style="">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px;border: none;" href="#memory">Next</a>
+                    <a class="btn btn-outline-dark btn-lg px-5"
+                        style="background-color: #00ACB0; color: white; margin-right: 10px;border: none;"
+                        href="#memory">Next</a>
                 </div>
             </div>
 
             <div class="vh-100 d-flex flex-wrap justify-content-center" id="memory">
+                <a class="dropdown e-buttom-faq" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-circle-question fa-xl d-flex justify-content-end dropdown"></i>
+                </a>
+                <ul class="dropdown-menu w-25 h-auto">
+                    <a class="dropdown-item e-dropTest"> <strong>Sur votre appareil Android</strong>, ouvrez Files by
+                        Google .
+                        En bas à gauche, appuyez sur Nettoyer .
+                        Les appareils utilisés et l'espace de stockage disponible s'affichent en haut de l'écran. Si
+                        votre téléphone dispose d'une carte SD, l'espace de stockage de celle-ci est également
+                        indiqué.</a>
+                    <a class="dropdown-item e-dropTest"><strong>Pour un appareil Apple</strong>, Consultation de
+                        l'espace de stockage sur votre
+                        appareil. Accédez
+                        à
+                        <strong>Réglages
+                            > Général > Stockage [appareil].</strong> Une liste de recommandations permettant
+                        d'optimiser le stockage
+                        de votre appareil peut s'afficher, suivie d'une liste des apps installées et de la quantité de
+                        stockage qu'elles occupent.</a>
+                </ul>
                 {{ form_row(form.memory) }}
                 {{ form_row(form.RAM) }}
                 <div class="" style="padding-left: 1.5rem">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; margin-right: 10px;border: none;" href="#model">Return</a>
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; border: none;" href="#network">Next</a>
+                    <a class="btn btn-outline-dark btn-lg px-5"
+                        style="background-color: #00ACB0; color: white; margin-right: 10px;border: none;"
+                        href="#model">Return</a>
+                    <a class="btn btn-outline-dark btn-lg px-5"
+                        style="background-color: #00ACB0; color: white; border: none;" href="#network">Next</a>
                 </div>
             </div>
 
             <div class="vh-100 d-flex flex-wrap justify-content-center" id="network">
+                <a class="dropdown e-icon1 e-buttom-faq" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-circle-question fa-xl d-flex justify-content-end dropdown"></i>
+                </a>
+                <ul class="dropdown-menu w-25 h-auto">
+                    <a class="dropdown-item e-dropTest"> <strong>Sur votre appareil Android</strong>, ouvrez Files by
+                        Google .
+                        En bas à gauche, appuyez sur Nettoyer .
+                        Les appareils utilisés et l'espace de stockage disponible s'affichent en haut de l'écran. Si
+                        votre téléphone dispose d'une carte SD, l'espace de stockage de celle-ci est également
+                        indiqué.</a>
+                    <a class="dropdown-item e-dropTest"><strong>Pour un appareil Apple</strong>, Consultation de
+                        l'espace de stockage sur votre
+                        appareil. Accédez
+                        à
+                        <strong>Réglages
+                            > Général > Stockage [appareil].</strong> Une liste de recommandations permettant
+                        d'optimiser le stockage
+                        de votre appareil peut s'afficher, suivie d'une liste des apps installées et de la quantité de
+                        stockage qu'elles occupent.</a>
+                </ul>
                 {{ form_row(form.network) }}
                 {{ form_row(form.status) }}
                 <div class="" style="padding-left: 1.5rem">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0;border: none; color: white; margin-right: 10px"  href="#memory">Return</a>
-                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0;border: none; color: white">{{ button_label|default('Save') }}</button>
+                    <a class="btn btn-outline-dark btn-lg px-5"
+                        style="background-color: #00ACB0;border: none; color: white; margin-right: 10px"
+                        href="#memory">Return</a>
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit"
+                        style="background-color: #00ACB0;border: none; color: white">{{ button_label|default('Save')
+                        }}</button>
                 </div>
-           {# <div class="vh-100 d-flex flex-wrap justify-content-center" id="RAM">
-                {{ form_row(form.memory) }}
-                {{ form_row(form.RAM) }}
-                <div class="" style="padding-left: 1.5rem">
-                    <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0;border: none; color: white; margin-right: 10px"  href="#network">Return</a>
-                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" style="background-color: #00ACB0;border: none; color: white">{{ button_label|default('Save') }}</button>
+                {# <div class="vh-100 d-flex flex-wrap justify-content-center" id="RAM">
+                    {{ form_row(form.memory) }}
+                    {{ form_row(form.RAM) }}
+                    <div class="" style="padding-left: 1.5rem">
+                        <a class="btn btn-outline-dark btn-lg px-5"
+                            style="background-color: #00ACB0;border: none; color: white; margin-right: 10px"
+                            href="#network">Return</a>
+                        <button class="btn btn-outline-dark btn-lg px-5" type="submit"
+                            style="background-color: #00ACB0;border: none; color: white">{{ button_label|default('Save')
+                            }}</button>
+                    </div>
                 </div>#}
             </div>
-
         </div>
+        {{ form_end(form) }}
     </div>
-    {{ form_end(form) }}
-</div>
-<div class="e-logoPageFaq d-flex d-flex-row-reverse">
-    <img src="{{ asset('/images/logoConnect.png') }}" alt="" class="tata">
+    <div class="e-logoPageFaq d-flex d-flex-row-reverse">
+        <img src="{{ asset('/images/logoConnect.png') }}" alt="" class="tata">
+    </div>
 </div>
