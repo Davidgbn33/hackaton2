@@ -108,6 +108,34 @@ fieldset legend{
 .mb-3 .my-custom-checkbox-label{
     margin-top:3%;
 }
+
+.e-icon1{
+    /* position: absolute; */
+    right: -338px;
+    /* top: 121px; */
+
+}
+
+/* .e-icon2{
+    position: absolute;
+    top: 1255px;
+    right: 424px;
+} */
+
+/* .e-icon3{
+    position: absolute;
+    right: 424px;
+} */
+
+.e-dropTest{
+    overflow-wrap: break-word;
+    /* word-wrap: break-word; */
+    white-space: initial;
+}
+
+.e-buttom-faq{
+    color:rgba(0, 39, 67, 1);
+}
 #telephone_network{
     display:flex;
     justify-content: space-around;
