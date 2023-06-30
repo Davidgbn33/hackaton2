@@ -191,7 +191,9 @@ class TelephoneController extends AbstractController
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
-            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+            $id = $telephone->getId();
+
+            return $this->redirectToRoute('app_summary', ['id'=> $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('telephone/new.html.twig', [
@@ -242,7 +244,9 @@ class TelephoneController extends AbstractController
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
-            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+            $id = $telephone->getId();
+
+            return $this->redirectToRoute('app_summary', ['id'=> $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('telephone/new.html.twig', [
@@ -292,7 +296,9 @@ class TelephoneController extends AbstractController
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
-            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+            $id = $telephone->getId();
+
+            return $this->redirectToRoute('app_summary', ['id'=> $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('telephone/new.html.twig', [
@@ -343,7 +349,9 @@ class TelephoneController extends AbstractController
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
-            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+            $id = $telephone->getId();
+
+            return $this->redirectToRoute('app_summary', ['id'=> $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('telephone/new.html.twig', [
@@ -394,7 +402,9 @@ class TelephoneController extends AbstractController
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
-            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+            $id = $telephone->getId();
+
+            return $this->redirectToRoute('app_summary', ['id'=> $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('telephone/new.html.twig', [
@@ -436,7 +446,9 @@ class TelephoneController extends AbstractController
             $telephone->setEstimatedPrice($estimatedPrice);
             $telephoneRepository->save($telephone, true);
 
-            return $this->redirectToRoute('app_telephone_index', [], Response::HTTP_SEE_OTHER);
+            $id = $telephone->getId();
+
+            return $this->redirectToRoute('app_summary', ['id'=> $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('telephone/new.html.twig', [
