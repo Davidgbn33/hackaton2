@@ -3,10 +3,24 @@
 
         <a class="navbar-brand" href="{{ path('app_brand') }}"><img class="e-logoBrand" src="{{ asset('/images/logo-emmaus.png') }}" style="height:100%; width:10vw"></a>
 
-        <div class="collapse navbar-collapse justify-content-center flex-grow-none
-" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-end flex-grow-0" id="navbarSupportedContent" style="margin-right:2%">
             <ul class="navbar-nav mb-2 mb-lg-0">
+                <div class="dropdown">
+                    <a class="btn text-muted dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Stock
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{ path('app_telephone_index') }}">Toutes les marques</a></li>
+                        <li><a class="dropdown-item" href="{{ path('apple') }}">Apple</a></li>
+                        <li><a class="dropdown-item" href="{{ path('samsung') }}">Samsung</a></li>
+                        <li><a class="dropdown-item" href="{{ path('sony') }}">Sony</a></li>
+                        <li><a class="dropdown-item" href="{{ path('xiaomi') }}">Xiaomi</a></li>
+                        <li><a class="dropdown-item" href="{{ path('huawei') }}">Huawei</a></li>
+                        <li><a class="dropdown-item" href="{{ path('lg') }}">LG</a></li>
+                    </ul>
+                </div>
             </ul>
+        </div>
         </div>
         <div class="collapse navbar-collapse justify-content-end flex-grow-0" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
@@ -15,13 +29,11 @@
                         Menu
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a></li>
                         <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
                         <li><a class="dropdown-item" href="{{ path('app_brand') }}">Ajouter un smartphone</a></li>
-                        <li><a class="dropdown-item" href="{{ path('app_telephone_index') }}">Stock des smartphones</a></li>
                         <li><a class="dropdown-item" href="{{ path('app_static_faq') }}">FAQ</a></li>
                         {% if is_granted('ROLE_ADMIN') %}
-                        <li><a class="dropdown-item" href="{{ path('admin') }}">EasyAdmin</a></li>
+                        <li><a class="dropdown-item" href="{{ path('admin') }}">Admin</a></li>
                         {% endif %}
                     </ul>
                 </div>

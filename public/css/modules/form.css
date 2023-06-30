@@ -136,3 +136,15 @@ fieldset legend{
 .e-buttom-faq{
     color:rgba(0, 39, 67, 1);
 }
+#telephone_network{
+    display:flex;
+    justify-content: space-around;
+    width:110%;
+    margin-left:-3%;
+}
+.vh-100 .mb-3{
+    width:100%;
+}
+#telephone_network .form-check{
+    padding-left:0%;
+}

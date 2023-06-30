@@ -42,7 +42,7 @@ class AppFixtures extends Fixture
     public const STATUS = [
      1 => [
             'name' => 'HS',
-            'price' => 0.5],
+            'price' => 0],
         2 => [
             'name' => 'REPARABLE',
             'price' => 0.5],

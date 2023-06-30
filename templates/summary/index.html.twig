@@ -4,21 +4,22 @@
 
 {% block body %}
 
-
-
     <div class="row">
 
-        <div class="col-3 d-flex justify-content-center align-items-center">
-            <img src="{{ asset('/images/Capture.png') }}" alt="" class="e-img"
-                 style="height:70vh; width:25vw; margin-left:8%; position:absolute; z-index: 4">
+
+          <div class="e-width" style="position:sticky; top:23vw;transform: translateY(13%) translateX(2%); height: 100%">
+            <div class="e-blue-square" style="width:19vw; height: 34vh; background-color: #61BDFF; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-72%); rotate:26deg;"></div>
+            <div class="e-yellow-square" style="width:19.5vw; height: 33vh; background-color: #FFB84D; opacity: 0.33;z-index:-4; position: absolute; transform: translateY(-50%) translateX(11%)"></div>
+            <img src="{{ asset('/images/iphone-addNewTel.png') }}" alt="" class="e-img" style="height:50vh; width:20vw; margin-left:8%; position:absolute; z-index: -1">
         </div>
+
 
         <div class="col-6">
             <div class="d-flex justify-content-center align-items-center" style="background-color: #00ACB0; z-index: -10; margin-top: -45px; height: 500px; width: 500px; border-radius: 50%; position: absolute; margin-left:135px; opacity: 25% "></div>
             <div class="my-5 mx-5 text-center">
-                {% for telephone in telephone %}
-                    <p style="font-family: 'Knewave', cursive; font-size: 75px"><strong>{{ telephone.model.name }}</strong></p>
-                <div class="d-flex align-items-center flex-column">
+{% for telephone in telephone %}
+                    <p style="font-family: 'Knewave', cursive; font-size: 75px; margin-top:-10%; margin-left:6%; margin-bottom:10%"><strong>{{ telephone.model.name }}</strong></p>
+                <div class="d-flex align-items-center flex-column" style="margin-left:10%">
                     <div class="d-flex align-items-center">
                         <p style="width:100px"><b>Mémoire :</b></p>
                         <button class="btn text-white p-3 mb-2 mx-5 sumBtn d-flex align-items-center justify-content-center"
@@ -35,24 +36,21 @@
                                 style="border: none;">{{ telephone.status.name }}</button>
                     </div>
                     <button class="btn btn-primary text-white p-3 mb-2 sumBtnCustom"
-                            style="border: none; width: 410px; height: 70px; margin-top: 50px">Prix de vente
+                            style="border: none; width: 410px; height: 70px; margin-top: 50px; margin-left:5%">Prix de vente
                         conseillé <b><i> {{ telephone.estimatedPrice }} € </i></b></button>
                 </div>
-                    {% endfor %}
+
                 <br>
-                <a href="/brand"></a>
+                <a href="/brand" style="margin-left:14%">
                 <button type="submit" class="sumBtnCustom btn btn-primary mx-lg-4"
-                        style="border: none; width: 180px; height: 50px;">Nouveau telephone
+                        style="border: none; width: 180px; height: 50px; margin">Nouveau telephone
                 </button>
+                </a>
             </div>
         </div>
-
-        <div class="col-3">
-            <div class="d-flex justify-content-end">
-                <img src="{{ asset('/images/background_logo.png') }}" alt=""
-                     style="position: fixed; bottom: 0; right: 0;">
-            </div>
+{% endfor %}
+        <div class="e-logoPageFaq d-flex d-flex-row-reverse">
+            <img src="{{ asset('/images/logoConnect.png') }}" alt="" class="tata">
         </div>
     </div>
-
 {% endblock %}
