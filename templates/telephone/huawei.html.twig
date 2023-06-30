@@ -11,7 +11,7 @@
     </h2>
 
 
-    <table class="table" style="width:80vw; margin-left: 10%; box-shadow: darkgray 1px 1px 1px 1px">
+    <table class="table" style="width:80vw; margin-left: 10%; box-shadow: darkgray 1px 1px 1px 1px; border-radius:4px">
         <thead>
         <tr>
             <th>Id</th>
@@ -41,7 +41,7 @@
                 <td>{{ telephone.createdAt ? telephone.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ telephone.updatedAt ? telephone.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_telephone_show', {'id': telephone.id}) }}">show</a>
+                    <a href="{{ path('app_summary', {'id': telephone.id}) }}">show</a>
                 </td>
             </tr>
         {% else %}
@@ -51,8 +51,8 @@
         {% endfor %}
         </tbody>
     </table>
-    <div class="add-new-by-form" style="display: flex; justify-content: center; margin-right:5%">
-        <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; width:150px; margin-top:3%;border: none" href="{{ path('apple_new') }}">Ajouter</a>
+    <div class="add-new-by-form" style="display: flex; justify-content: center; margin-right:5%; margin-bottom:5%">
+        <a class="btn btn-outline-dark btn-lg px-5" style="background-color: #00ACB0; color: white; width:150px; margin-top:3%;border: none" href="{{ path('huawei_new') }}">Ajouter</a>
     </div>
     <div class="e-logoPageFaq d-flex d-flex-row-reverse">
         <img src="{{ asset('/images/logoConnect.png') }}" alt="" class="tata">
